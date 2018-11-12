@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaModoJogoController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/space2.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btVoltar" layoutX="551.0" layoutY="585.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="VOLTAR" />
+      <Button fx:id="btSistSolar" layoutX="481.0" layoutY="108.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="SISTEMA SOLAR" />
+      <Button fx:id="btAdvPlaneta" layoutX="438.0" layoutY="412.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="ADVINHE O PLANETA" />
+      <Button fx:id="btConst" layoutX="480.0" layoutY="204.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="CONSTELAÇÕES" />
+      <Button fx:id="btCacPlaneta" layoutX="477.0" layoutY="309.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="CAÇA PLANETAS" />
+   </children>
+</AnchorPane>

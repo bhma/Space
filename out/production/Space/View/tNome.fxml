@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaNomeController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/space2.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txfDigNome" layoutX="406.0" layoutY="311.0" prefHeight="49.0" prefWidth="483.0" promptText="Digite seu nome">
+         <font>
+            <Font name="DejaVu Sans Bold" size="24.0" />
+         </font>
+      </TextField>
+      <Label layoutX="396.0" layoutY="236.0" text="Como você se chama?">
+         <font>
+            <Font name="DejaVu Sans Bold" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="btContinua" layoutX="678.0" layoutY="453.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="CONTINUAR" />
+      <Button fx:id="btVoltar" layoutX="401.0" layoutY="453.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="VOLTAR" />
+      <Text fx:id="txtErro" fill="#140101" layoutX="416.0" layoutY="400.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: #140000; -fx-fill: #fafafa;">
+         <font>
+            <Font name="DejaVu Sans" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
