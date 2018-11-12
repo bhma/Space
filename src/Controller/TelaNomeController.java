@@ -1,7 +1,5 @@
 package Controller;
 
-import Model.JogoModel;
-import View.Main;
 import View.TelaNome;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

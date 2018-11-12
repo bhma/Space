@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.JogoModel;
 import View.TelaSistSolar;
 import javafx.animation.PathTransition;
 import javafx.fxml.FXML;
@@ -14,7 +13,6 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
 
 public class TelaSistSolarController implements Initializable {
     @FXML private Button btVoltar;
@@ -31,11 +29,10 @@ public class TelaSistSolarController implements Initializable {
     @FXML private Text txtAviso;
     @FXML private Text txtPont;
     @FXML private ImageView imgSun;
-    private JogoModel novoJogol;
+    private JogoController novoJogol;
 
-    private int xTerra, yTerra;
-    private double angTerra;
-    private Timer timer;
+    private boolean vMerc = false, vVenus= false, vTerra= false, vMart= false,
+                    vJup= false, vSat= false, vUra= false, vNetu= false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -159,8 +156,7 @@ public class TelaSistSolarController implements Initializable {
             if(this.novoJogol.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart,
                                              imgJup, imgSatur, imgUrano, imgNetu))
             {
-                //testandoOOOOOOOOO
-                txtNomePlaneta.setText("Parabéns!!");
+                txtNomePlaneta.setText("Parabéns!");
                 orbitar("Merc").play();
                 orbitar("Venus").play();
                 orbitar("Terra").play();
@@ -303,6 +299,6 @@ public class TelaSistSolarController implements Initializable {
     }
 
     private void iniciaJogo(String nome){
-        novoJogol = new JogoModel(nome);
+        novoJogol = new JogoController(nome);
     }
 }
