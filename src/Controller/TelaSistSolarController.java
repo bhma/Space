@@ -194,27 +194,27 @@ public class TelaSistSolarController implements Initializable {
                 el.setRadiusY(155);
                 break;
             case "Terra":
-                el.setCenterX(-235);
+                el.setCenterX(-265);
                 el.setCenterY(30);
-                el.setRadiusX(265);
-                el.setRadiusY(215);
-                break;
-            case "Mart":
-                el.setCenterX(-295);
-                el.setCenterY(40);
-                el.setRadiusX(320);
+                el.setRadiusX(295);
                 el.setRadiusY(235);
                 break;
+            case "Mart":
+                el.setCenterX(-335);
+                el.setCenterY(40);
+                el.setRadiusX(370);
+                el.setRadiusY(315);
+                break;
             case "Jup":
-                el.setCenterX(-410);
-                el.setCenterY(70);
+                el.setCenterX(-425);
+                el.setCenterY(60);
                 el.setRadiusX(480);
                 el.setRadiusY(400);
                 break;
             case "Sat":
-                el.setCenterX(-580);
+                el.setCenterX(-550);
                 el.setCenterY(40);
-                el.setRadiusX(640);
+                el.setRadiusX(600);
                 el.setRadiusY(470);
                 break;
             case "Ura":
