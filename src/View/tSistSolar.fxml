@@ -8,14 +8,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaSistSolarController">
+<AnchorPane prefHeight="400.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaSistSolarController">
    <children>
+      <Text fx:id="txtPont" fill="#7bebd1" layoutX="208.0" layoutY="165.0" strokeType="OUTSIDE">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/space1.jpg" />
          </image>
       </ImageView>
-      <Ellipse fill="#1f93ff00" layoutX="1006.0" layoutY="525.0" radiusX="592.0" radiusY="477.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="#1f93ff00" layoutX="993.0" layoutY="534.0" radiusX="832.0" radiusY="538.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fx:id="eliUra" fill="#1f93ff00" layoutX="1006.0" layoutY="530.0" radiusX="703.0" radiusY="525.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="#1f93ff00" layoutX="1006.0" layoutY="530.0" radiusX="592.0" radiusY="472.0" stroke="WHITE" strokeType="INSIDE" />
       <Ellipse fill="#1f93ff00" layoutX="1004.0" layoutY="533.0" radiusX="482.0" radiusY="393.0" stroke="WHITE" strokeType="INSIDE" />
       <Ellipse fill="#1f93ff00" layoutX="981.0" layoutY="531.0" radiusX="373.0" radiusY="316.0" stroke="WHITE" strokeType="INSIDE" />
       <Ellipse fill="#ffffff00" layoutX="973.0" layoutY="529.0" radiusX="294.0" radiusY="241.0" stroke="WHITE" strokeType="INSIDE" />
@@ -26,39 +33,39 @@
             <Image url="@../Images/sun.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgTerra" fitHeight="53.0" fitWidth="58.0" layoutX="1825.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgTerra" fitHeight="53.0" fitWidth="58.0" layoutX="1241.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/earth.png" />
          </image>
       </ImageView>
       <Button fx:id="btVoltar" layoutX="38.0" layoutY="989.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="VOLTAR" />
       <Button fx:id="btSub" layoutX="173.0" layoutY="989.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="SUBMIT" />
-      <ImageView fx:id="imgVenus" fitHeight="63.0" fitWidth="63.0" layoutX="1820.0" layoutY="748.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgVenus" fitHeight="63.0" fitWidth="63.0" layoutX="1130.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Venus1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgMerc" fitHeight="65.0" fitWidth="55.0" layoutX="1828.0" layoutY="866.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgMerc" fitHeight="65.0" fitWidth="55.0" layoutX="1052.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Mercurio.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgUrano" fitHeight="103.0" fitWidth="63.0" layoutX="1820.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="imgUrano" fitHeight="103.0" fitWidth="63.0" layoutX="1678.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../Images/Urano.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgSatur" fitHeight="63.0" fitWidth="95.0" layoutX="1805.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgSatur" fitHeight="63.0" fitWidth="95.0" layoutX="1552.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Saturno.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgJup" fitHeight="102.0" fitWidth="95.0" layoutX="1804.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgJup" fitHeight="102.0" fitWidth="95.0" layoutX="1439.0" layoutY="481.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Jupter.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgMart" fitHeight="59.0" fitWidth="63.0" layoutX="1826.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgMart" fitHeight="59.0" fitWidth="63.0" layoutX="1325.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Marte.png" />
          </image>
@@ -68,17 +75,12 @@
             <Image url="@../Images/Netuno.png" />
          </image>
       </ImageView>
-      <Text fx:id="txtNomePlaneta" fill="#7bebd1" layoutX="894.0" layoutY="105.0" nodeOrientation="RIGHT_TO_LEFT" stroke="#2a6a72" strokeType="INSIDE" textAlignment="CENTER">
+      <Text fx:id="txtNomePlaneta" fill="#7bebd1" layoutX="46.0" layoutY="90.0" nodeOrientation="RIGHT_TO_LEFT" stroke="#2a6a72" strokeType="INSIDE" textAlignment="CENTER">
          <font>
             <Font size="35.0" />
          </font>
       </Text>
-      <Text fill="#7bebd1" layoutX="84.0" layoutY="86.0" stroke="#2a6a72" strokeType="OUTSIDE" text="Pontos:" textAlignment="CENTER">
-         <font>
-            <Font name="DejaVu Sans Bold" size="30.0" />
-         </font>
-      </Text>
-      <Text fx:id="txtPont" fill="#7bebd1" layoutX="246.0" layoutY="87.0" strokeType="OUTSIDE">
+      <Text fill="#7bebd1" layoutX="46.0" layoutY="164.0" stroke="#2a6a72" strokeType="OUTSIDE" text="Pontos:" textAlignment="CENTER">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>

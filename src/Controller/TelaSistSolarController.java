@@ -29,6 +29,8 @@ public class TelaSistSolarController implements Initializable {
     @FXML private Text txtAviso;
     @FXML private Text txtPont;
     @FXML private ImageView imgSun;
+    @FXML private Ellipse eliUra;
+
     private JogoController novoJogol;
 
     private boolean vMerc = false, vVenus= false, vTerra= false, vMart= false,
@@ -156,7 +158,7 @@ public class TelaSistSolarController implements Initializable {
             if(this.novoJogol.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart,
                                              imgJup, imgSatur, imgUrano, imgNetu))
             {
-                txtNomePlaneta.setText("Parabéns!");
+                txtNomePlaneta.setText("Parabéns");
                 orbitar("Merc").play();
                 orbitar("Venus").play();
                 orbitar("Terra").play();
@@ -168,6 +170,9 @@ public class TelaSistSolarController implements Initializable {
             }else{
                 txtAviso.setText("Algum planeta esta fora de sua órbita!");
             }
+        });
+        eliUra.setOnMouseClicked(event -> {
+            System.out.println("Cliquei na órbita de Urano!");
         });
 
     }
@@ -218,16 +223,16 @@ public class TelaSistSolarController implements Initializable {
                 el.setRadiusY(470);
                 break;
             case "Ura":
-                el.setCenterX(-715);
-                el.setCenterY(45);
-                el.setRadiusX(760);
-                el.setRadiusY(470);
+                el.setCenterX(-680);
+                el.setCenterY(38);
+                el.setRadiusX(710);
+                el.setRadiusY(510);
                 break;
             case "Netu":
-                el.setCenterX(-869);
-                el.setCenterY(32);
-                el.setRadiusX(900);
-                el.setRadiusY(470);
+                el.setCenterX(-800);
+                el.setCenterY(30);
+                el.setRadiusX(830);
+                el.setRadiusY(520);
                 break;
         }
         return el;
