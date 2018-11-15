@@ -5,6 +5,7 @@ import javafx.animation.PathTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.text.Text;
@@ -25,11 +26,19 @@ public class TelaSistSolarController implements Initializable {
     @FXML private ImageView imgJup;
     @FXML private ImageView imgMart;
     @FXML private ImageView imgNetu;
+    @FXML private ImageView imgSun;
     @FXML private Text txtNomePlaneta;
     @FXML private Text txtAviso;
-    @FXML private Text txtPont;
-    @FXML private ImageView imgSun;
+    @FXML private Label lblPont;
+    @FXML private Ellipse eliNetu;
     @FXML private Ellipse eliUra;
+    @FXML private Ellipse eliSat;
+    @FXML private Ellipse eliJup;
+    @FXML private Ellipse eliMart;
+    @FXML private Ellipse eliTerra;
+    @FXML private Ellipse eliVenus;
+    @FXML private Ellipse eliMerc;
+
 
     private JogoController novoJogol;
 
@@ -294,7 +303,7 @@ public class TelaSistSolarController implements Initializable {
     }
 
     public void mostraPontos(){
-        txtPont.setText(Integer.toString(novoJogol.getPontos()));
+        lblPont.setText(Integer.toString(novoJogol.getPontos()));
     }
 
     public void mostraNome(String planet){ txtNomePlaneta.setText(planet); }

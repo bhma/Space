@@ -56,8 +56,8 @@ public class JogoController {
                 if(x > 1000 && x <1100 && y > 420 && y < 640){
                     if(vMerc == false){
                         System.out.println("Está certo!!");
-                        vMerc = true;
                         this.setPontos(this.getPontos() + 10);
+                        vMerc = true;
                     }
                 }else{
                     if(eMerc == false){
@@ -117,7 +117,7 @@ public class JogoController {
                         this.setPontos(this.getPontos() + 10);
                     }
                 }else{
-                    if(eTerra == false){
+                    if(eMart == false){
                         eTerra= true;
                         System.out.println("Está Errado!!");
                         if((this.getPontos() - 3) < 0){
@@ -155,7 +155,7 @@ public class JogoController {
                         this.setPontos(this.getPontos() + 15);
                     }
                 }else{
-                    if(eJup == false) {
+                    if(eSat == false) {
                         eJup = true;
                         System.out.println("Está Errado!!");
                         if((this.getPontos() - 5)< 0){
