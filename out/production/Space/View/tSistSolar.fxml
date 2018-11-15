@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -24,6 +25,14 @@
       <Ellipse fx:id="eliTerra" fill="#ffffff00" layoutX="973.0" layoutY="529.0" radiusX="294.0" radiusY="241.0" stroke="WHITE" strokeType="INSIDE" />
       <Ellipse fx:id="eliVenus" fill="#ffffff00" layoutX="975.0" layoutY="527.0" radiusX="186.0" radiusY="158.0" stroke="#f8f8f8" strokeType="INSIDE" />
       <Ellipse fx:id="eliMerc" fill="#ffffff00" layoutX="964.0" layoutY="536.0" radiusX="115.0" radiusY="93.0" stroke="WHITE" />
+      <Circle fx:id="p8" fill="WHITE" layoutX="1825.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="p4" fill="WHITE" layoutX="1354.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="p5" fill="WHITE" layoutX="1486.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="p6" fill="WHITE" layoutX="1598.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="p7" fill="WHITE" layoutX="1709.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="p1" fill="WHITE" layoutX="1079.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="p3" fill="WHITE" layoutX="1267.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="p2" fill="WHITE" layoutX="1161.0" layoutY="533.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fx:id="imgSun" fitHeight="129.0" fitWidth="140.0" layoutX="896.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/sun.png" />
@@ -35,7 +44,7 @@
          </image>
       </ImageView>
       <Button fx:id="btVoltar" layoutX="38.0" layoutY="989.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="VOLTAR" />
-      <Button fx:id="btSub" layoutX="173.0" layoutY="989.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="SUBMIT" />
+      <Button fx:id="btSub" layoutX="199.0" layoutY="989.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="SUBMIT" />
       <ImageView fx:id="imgVenus" fitHeight="63.0" fitWidth="63.0" layoutX="1820.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Venus1.png" />
@@ -81,7 +90,7 @@
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="txtAviso" fill="#fff704" layoutX="704.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+      <Text fx:id="txtAviso" fill="#fff704" layoutX="679.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
@@ -91,5 +100,7 @@
             <Font name="DejaVu Sans Bold" size="25.0" />
          </font>
       </Label>
+      <Button fx:id="btPause" layoutX="45.0" layoutY="912.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="PAUSA" />
+      <Button layoutX="173.0" layoutY="912.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="RECOMEÇAR" />
    </children>
 </AnchorPane>

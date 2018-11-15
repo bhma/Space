@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -18,6 +19,7 @@ import java.util.ResourceBundle;
 public class TelaSistSolarController implements Initializable {
     @FXML private Button btVoltar;
     @FXML private Button btSub;
+    @FXML private Button btPause;
     @FXML private ImageView imgTerra;
     @FXML private ImageView imgVenus;
     @FXML private ImageView imgMerc;
@@ -30,17 +32,12 @@ public class TelaSistSolarController implements Initializable {
     @FXML private Text txtNomePlaneta;
     @FXML private Text txtAviso;
     @FXML private Label lblPont;
-    @FXML private Ellipse eliNetu;
-    @FXML private Ellipse eliUra;
-    @FXML private Ellipse eliSat;
-    @FXML private Ellipse eliJup;
-    @FXML private Ellipse eliMart;
-    @FXML private Ellipse eliTerra;
-    @FXML private Ellipse eliVenus;
-    @FXML private Ellipse eliMerc;
+    @FXML private Ellipse eliUra, eliNetu, eliSat, eliJup, eliMart, eliTerra, eliVenus, eliMerc;
+    @FXML private Circle p1, p2, p3, p4, p5, p6, p7, p8;
 
 
     private JogoController novoJogol;
+    private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu;
 
     private boolean vMerc = false, vVenus= false, vTerra= false, vMart= false,
                     vJup= false, vSat= false, vUra= false, vNetu= false;
@@ -126,34 +123,42 @@ public class TelaSistSolarController implements Initializable {
         imgMerc.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgMerc.getLayoutX(), imgMerc.getLayoutY(), "Merc");
             mostraPontos();
+            obMerc = orbitar("Merc");
         });
         imgVenus.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgVenus.getLayoutX(), imgVenus.getLayoutY(), "Venus");
             mostraPontos();
+            obVenus = orbitar("Venus");
         });
         imgTerra.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgTerra.getLayoutX(), imgTerra.getLayoutY(), "Terra");
             mostraPontos();
+            obTerra = orbitar("Terra");
         });
         imgMart.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgMart.getLayoutX(), imgMart.getLayoutY(), "Mart");
             mostraPontos();
+            obMart = orbitar("Mart");
         });
         imgJup.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgJup.getLayoutX(), imgJup.getLayoutY(), "Jupt");
             mostraPontos();
+            obJup = orbitar("Jup");
         });
         imgSatur.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgSatur.getLayoutX(), imgSatur.getLayoutY(), "Satur");
             mostraPontos();
+            obSat = orbitar("Sat");
         });
         imgUrano.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgUrano.getLayoutX(), imgUrano.getLayoutY(), "Ura");
             mostraPontos();
+            obUra = orbitar("Ura");
         });
         imgNetu.setOnMouseReleased(event -> {
             this.novoJogol.verificaPosicao(imgNetu.getLayoutX(), imgNetu.getLayoutY(), "Netu");
             mostraPontos();
+            obNetu = orbitar("Netu");
         });
         btVoltar.setOnMouseClicked(event -> {
             try {
@@ -167,18 +172,29 @@ public class TelaSistSolarController implements Initializable {
             if(this.novoJogol.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart,
                                              imgJup, imgSatur, imgUrano, imgNetu))
             {
+                limpaPont();
                 txtNomePlaneta.setText("Parabéns");
-                orbitar("Merc").play();
-                orbitar("Venus").play();
-                orbitar("Terra").play();
-                orbitar("Mart").play();
-                orbitar("Jup").play();
-                orbitar("Sat").play();
-                orbitar("Ura").play();
-                orbitar("Netu").play();
+                obMerc.play();
+                obVenus.play();
+                obTerra.play();
+                obMart.play();
+                obJup.play();
+                obSat.play();
+                obUra.play();
+                obNetu.play();
             }else{
                 txtAviso.setText("Algum planeta esta fora de sua órbita!");
             }
+        });
+        btPause.setOnMouseClicked(event -> {
+            obMerc.pause();
+            obVenus.pause();
+            obTerra.pause();
+            obMart.pause();
+            obJup.pause();
+            obSat.pause();
+            obUra.pause();
+            obNetu.pause();
         });
         eliUra.setOnMouseClicked(event -> {
             System.out.println("Cliquei na órbita de Urano!");
@@ -304,6 +320,16 @@ public class TelaSistSolarController implements Initializable {
 
     public void mostraPontos(){
         lblPont.setText(Integer.toString(novoJogol.getPontos()));
+    }
+    public void limpaPont(){
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(false);
+        p6.setVisible(false);
+        p7.setVisible(false);
+        p8.setVisible(false);
     }
 
     public void mostraNome(String planet){ txtNomePlaneta.setText(planet); }
