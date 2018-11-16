@@ -101,6 +101,16 @@
          </font>
       </Label>
       <Button fx:id="btPause" layoutX="45.0" layoutY="912.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="PAUSA" />
-      <Button layoutX="173.0" layoutY="912.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="RECOMEÇAR" />
+      <Button fx:id="btReco" layoutX="173.0" layoutY="912.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="RECOMEÇAR" />
+      <ImageView fx:id="imgHawking" fitHeight="245.0" fitWidth="182.0" layoutX="1548.0" layoutY="808.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Hawking.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgNeil" fitHeight="248.0" fitWidth="151.0" layoutX="414.0" layoutY="811.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Neil.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

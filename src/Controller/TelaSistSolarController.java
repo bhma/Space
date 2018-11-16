@@ -1,14 +1,15 @@
 package Controller;
 
 import View.TelaSistSolar;
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
 import javafx.animation.PathTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.*;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -20,6 +21,7 @@ public class TelaSistSolarController implements Initializable {
     @FXML private Button btVoltar;
     @FXML private Button btSub;
     @FXML private Button btPause;
+    @FXML private Button btReco;
     @FXML private ImageView imgTerra;
     @FXML private ImageView imgVenus;
     @FXML private ImageView imgMerc;
@@ -29,6 +31,8 @@ public class TelaSistSolarController implements Initializable {
     @FXML private ImageView imgMart;
     @FXML private ImageView imgNetu;
     @FXML private ImageView imgSun;
+    @FXML private ImageView imgHawking;
+    @FXML private ImageView imgNeil;
     @FXML private Text txtNomePlaneta;
     @FXML private Text txtAviso;
     @FXML private Label lblPont;
@@ -38,9 +42,7 @@ public class TelaSistSolarController implements Initializable {
 
     private JogoController novoJogol;
     private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu;
-
-    private boolean vMerc = false, vVenus= false, vTerra= false, vMart= false,
-                    vJup= false, vSat= false, vUra= false, vNetu= false;
+    private ParallelTransition dHawking, dNeil;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -172,7 +174,7 @@ public class TelaSistSolarController implements Initializable {
             if(this.novoJogol.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart,
                                              imgJup, imgSatur, imgUrano, imgNetu))
             {
-                limpaPont();
+                limpaPont(false);
                 txtNomePlaneta.setText("Parabéns");
                 obMerc.play();
                 obVenus.play();
@@ -187,17 +189,69 @@ public class TelaSistSolarController implements Initializable {
             }
         });
         btPause.setOnMouseClicked(event -> {
-            obMerc.pause();
-            obVenus.pause();
-            obTerra.pause();
-            obMart.pause();
-            obJup.pause();
-            obSat.pause();
-            obUra.pause();
-            obNetu.pause();
+            if(obMerc != null && obVenus != null && obTerra != null && obMart != null && obJup != null &&
+                obSat != null && obUra != null && obNetu != null){
+                obMerc.pause();
+                obVenus.pause();
+                obTerra.pause();
+                obMart.pause();
+                obJup.pause();
+                obSat.pause();
+                obUra.pause();
+                obNetu.pause();
+            }else{
+                System.out.println("Uma órbita está vazia!!");
+            }
+        });
+        btReco.setOnMouseClicked(event -> {
+            limpaPont(true);
+            lblPont.setText("");
+            novoJogol.setPontos(0);
+            
+        });
+        eliMerc.setOnMouseClicked(event -> {
+            dNeil = loadTip("neil");
+            dNeil.play();
+        });
+        eliVenus.setOnMouseClicked(event -> {
+            dHawking = loadTip("hawking");
+            dHawking.play();
+        });
+        eliTerra.setOnMouseClicked(event -> {
+            dNeil = loadTip("neil");
+            dNeil.play();
+        });
+        eliMart.setOnMouseClicked(event -> {
+            dHawking = loadTip("hawking");
+            dHawking.play();
+        });
+        eliJup.setOnMouseClicked(event -> {
+            dNeil = loadTip("neil");
+            dNeil.play();
+        });
+        eliSat.setOnMouseClicked(event -> {
+            dHawking = loadTip("hawking");
+            dHawking.play();
         });
         eliUra.setOnMouseClicked(event -> {
-            System.out.println("Cliquei na órbita de Urano!");
+            dNeil = loadTip("neil");
+            dNeil.play();
+        });
+        eliNetu.setOnMouseClicked(event -> {
+            dHawking = loadTip("hawking");
+            dHawking.play();
+        });
+        imgHawking.setOnMouseClicked(event -> {
+            if(imgHawking.getOpacity() != 0.0){
+                dHawking = closeTip("hawking");
+                dHawking.play();
+            }
+        });
+        imgNeil.setOnMouseClicked(event -> {
+            if(imgNeil.getOpacity() != 0.0){
+                dNeil = closeTip("neil");
+                dNeil.play();
+            }
         });
 
     }
@@ -321,15 +375,110 @@ public class TelaSistSolarController implements Initializable {
     public void mostraPontos(){
         lblPont.setText(Integer.toString(novoJogol.getPontos()));
     }
-    public void limpaPont(){
-        p1.setVisible(false);
-        p2.setVisible(false);
-        p3.setVisible(false);
-        p4.setVisible(false);
-        p5.setVisible(false);
-        p6.setVisible(false);
-        p7.setVisible(false);
-        p8.setVisible(false);
+    public void limpaPont(boolean s){
+        if(s == false){
+            p1.setVisible(false);
+            p2.setVisible(false);
+            p3.setVisible(false);
+            p4.setVisible(false);
+            p5.setVisible(false);
+            p6.setVisible(false);
+            p7.setVisible(false);
+            p8.setVisible(false);
+        }else{
+            p1.setVisible(true);
+            p2.setVisible(true);
+            p3.setVisible(true);
+            p4.setVisible(true);
+            p5.setVisible(true);
+            p6.setVisible(true);
+            p7.setVisible(true);
+            p8.setVisible(true);
+        }
+
+    }
+
+    public ParallelTransition loadTip(String nome){
+        ParallelTransition p = null;
+        switch (nome){
+            case "hawking":
+                Line li = new Line();
+                li.setStartX(100);
+                li.setStartY(100);
+                li.setEndX(100);
+                li.setEndY(50);
+
+                PathTransition tra = new PathTransition();
+                tra.setNode(imgHawking);
+                tra.setDuration(Duration.seconds(1));
+                tra.setPath(li);
+
+                FadeTransition fd = new FadeTransition(Duration.seconds(1), imgHawking);
+                fd.setFromValue(0.0);
+                fd.setToValue(1.0);
+                p = new ParallelTransition(tra, fd);
+                break;
+            case "neil":
+                Line li1 = new Line();
+                li1.setStartX(100);
+                li1.setStartY(100);
+                li1.setEndX(100);
+                li1.setEndY(50);
+
+                PathTransition tra1 = new PathTransition();
+                tra1.setNode(imgNeil);
+                tra1.setDuration(Duration.seconds(1));
+                tra1.setPath(li1);
+
+                FadeTransition fd1 = new FadeTransition(Duration.seconds(1), imgNeil);
+                fd1.setFromValue(0.0);
+                fd1.setToValue(1.0);
+                p = new ParallelTransition(tra1, fd1);
+                break;
+        }
+
+        return p;
+    }
+
+    public ParallelTransition closeTip(String nome){
+        ParallelTransition p = null;
+        switch (nome){
+            case "hawking":
+                Line li = new Line();
+                li.setStartX(100);
+                li.setStartY(50);
+                li.setEndX(100);
+                li.setEndY(100);
+
+                PathTransition tra = new PathTransition();
+                tra.setNode(imgHawking);
+                tra.setDuration(Duration.seconds(1));
+                tra.setPath(li);
+
+                FadeTransition fd = new FadeTransition(Duration.seconds(1), imgHawking);
+                fd.setFromValue(1.0);
+                fd.setToValue(0.0);
+                p = new ParallelTransition(tra, fd);
+                break;
+            case "neil":
+                Line li1 = new Line();
+                li1.setStartX(100);
+                li1.setStartY(50);
+                li1.setEndX(100);
+                li1.setEndY(100);
+
+                PathTransition tra1 = new PathTransition();
+                tra1.setNode(imgNeil);
+                tra1.setDuration(Duration.seconds(1));
+                tra1.setPath(li1);
+
+                FadeTransition fd1 = new FadeTransition(Duration.seconds(1), imgNeil);
+                fd1.setFromValue(1.0);
+                fd1.setToValue(0.0);
+                p = new ParallelTransition(tra1, fd1);
+                break;
+        }
+        return p;
     }
 
     public void mostraNome(String planet){ txtNomePlaneta.setText(planet); }
