@@ -33,6 +33,8 @@ public class TelaSistSolarController implements Initializable {
     @FXML private ImageView imgSun;
     @FXML private ImageView imgHawking;
     @FXML private ImageView imgNeil;
+    @FXML private ImageView bl2;
+    @FXML private ImageView bl1;
     @FXML private Text txtNomePlaneta;
     @FXML private Text txtAviso;
     @FXML private Label lblPont;
@@ -41,8 +43,8 @@ public class TelaSistSolarController implements Initializable {
 
 
     private JogoController novoJogol;
-    private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu;
-    private ParallelTransition dHawking, dNeil;
+    private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu, recMerc;
+    private ParallelTransition dHawking, dNeil, dBalao1, dBalao2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -171,9 +173,7 @@ public class TelaSistSolarController implements Initializable {
         });
         final long tm = System.nanoTime();
         btSub.setOnMouseClicked(event -> {
-            if(this.novoJogol.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart,
-                                             imgJup, imgSatur, imgUrano, imgNetu))
-            {
+            if(this.novoJogol.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart, imgJup, imgSatur, imgUrano, imgNetu)){
                 limpaPont(false);
                 txtNomePlaneta.setText("Parabéns");
                 obMerc.play();
@@ -181,6 +181,7 @@ public class TelaSistSolarController implements Initializable {
                 obTerra.play();
                 obMart.play();
                 obJup.play();
+
                 obSat.play();
                 obUra.play();
                 obNetu.play();
@@ -201,45 +202,6 @@ public class TelaSistSolarController implements Initializable {
                 obNetu.pause();
             }else{
                 System.out.println("Uma órbita está vazia!!");
-            }
-        });
-        btReco.setOnMouseClicked(event -> {
-            limpaPont(true);
-            lblPont.setText("");
-            novoJogol.setPontos(0);
-            obMerc.stop();
-            obVenus.stop();
-            obTerra.stop();
-            obMart.stop();
-            obJup.stop();
-            obSat.stop();
-            obUra.stop();
-            obNetu.stop();
-            if(imgMerc.getLayoutX() != 1824 && imgMerc.getLayoutY() != 428 ||
-               imgVenus.getLayoutX() != 1820 && imgVenus.getLayoutY() != 78 ||
-               imgTerra.getLayoutX() != 1816 && imgTerra.getLayoutY() != 812 ||
-               imgMart.getLayoutX() != 1825 && imgMart.getLayoutY() != 322 ||
-               imgJup.getLayoutX() != 1795 && imgJup.getLayoutY() != 926 ||
-               imgSatur.getLayoutX() != 1805 && imgSatur.getLayoutY() != 211 ||
-               imgUrano.getLayoutX() != 1811 && imgUrano.getLayoutY() != 677 ||
-               imgNetu.getLayoutX() != 1820 && imgNetu.getLayoutY() != 588){
-
-                imgMerc.setLayoutX(1824);
-                imgMerc.setLayoutY(428);
-                imgVenus.setLayoutX(1820);
-                imgVenus.setLayoutY(78);
-                imgTerra.setLayoutX(1816);
-                imgTerra.setLayoutY(812);
-                imgMart.setLayoutX(1825);
-                imgMart.setLayoutY(322);
-                imgJup.setLayoutX(1795);
-                imgJup.setLayoutY(926);
-                imgSatur.setLayoutX(1805);
-                imgSatur.setLayoutY(211);
-                imgUrano.setLayoutX(1811);
-                imgUrano.setLayoutY(677);
-                imgNetu.setLayoutX(1820);
-                imgNetu.setLayoutY(588);
             }
         });
         eliMerc.setOnMouseClicked(event -> {
@@ -277,13 +239,17 @@ public class TelaSistSolarController implements Initializable {
         imgHawking.setOnMouseClicked(event -> {
             if(imgHawking.getOpacity() != 0.0){
                 dHawking = closeTip("hawking");
+                dBalao2 = closeTip("ba2");
                 dHawking.play();
+                dBalao2.play();
             }
         });
         imgNeil.setOnMouseClicked(event -> {
             if(imgNeil.getOpacity() != 0.0){
                 dNeil = closeTip("neil");
+                dBalao1 = closeTip("ba1");
                 dNeil.play();
+                dBalao1.play();
             }
         });
 
@@ -454,9 +420,9 @@ public class TelaSistSolarController implements Initializable {
             case "neil":
                 Line li1 = new Line();
                 li1.setStartX(100);
-                li1.setStartY(100);
+                li1.setStartY(130);
                 li1.setEndX(100);
-                li1.setEndY(50);
+                li1.setEndY(80);
 
                 PathTransition tra1 = new PathTransition();
                 tra1.setNode(imgNeil);
@@ -467,6 +433,40 @@ public class TelaSistSolarController implements Initializable {
                 fd1.setFromValue(0.0);
                 fd1.setToValue(1.0);
                 p = new ParallelTransition(tra1, fd1);
+                break;
+            case "ba1":
+                Line li2 = new Line();
+                li2.setStartX(200);
+                li2.setStartY(230);
+                li2.setEndX(200);
+                li2.setEndY(180);
+
+                PathTransition tra2 = new PathTransition();
+                tra2.setNode(bl1);
+                tra2.setDuration(Duration.seconds(1));
+                tra2.setPath(li2);
+
+                FadeTransition fd2 = new FadeTransition(Duration.seconds(1), bl1);
+                fd2.setFromValue(0.0);
+                fd2.setToValue(1.0);
+                p = new ParallelTransition(tra2, fd2);
+                break;
+            case "ba2":
+                Line li3 = new Line();
+                li3.setStartX(200);
+                li3.setStartY(250);
+                li3.setEndX(200);
+                li3.setEndY(180);
+
+                PathTransition tra3 = new PathTransition();
+                tra3.setNode(bl2);
+                tra3.setDuration(Duration.seconds(1));
+                tra3.setPath(li3);
+
+                FadeTransition fd3 = new FadeTransition(Duration.seconds(1), bl2);
+                fd3.setFromValue(0.0);
+                fd3.setToValue(1.0);
+                p = new ParallelTransition(tra3, fd3);
                 break;
         }
 
@@ -496,9 +496,9 @@ public class TelaSistSolarController implements Initializable {
             case "neil":
                 Line li1 = new Line();
                 li1.setStartX(100);
-                li1.setStartY(50);
+                li1.setStartY(80);
                 li1.setEndX(100);
-                li1.setEndY(100);
+                li1.setEndY(130);
 
                 PathTransition tra1 = new PathTransition();
                 tra1.setNode(imgNeil);
@@ -509,6 +509,40 @@ public class TelaSistSolarController implements Initializable {
                 fd1.setFromValue(1.0);
                 fd1.setToValue(0.0);
                 p = new ParallelTransition(tra1, fd1);
+                break;
+            case "ba1":
+                Line li2 = new Line();
+                li2.setStartX(200);
+                li2.setStartY(180);
+                li2.setEndX(200);
+                li2.setEndY(230);
+
+                PathTransition tra2 = new PathTransition();
+                tra2.setNode(bl1);
+                tra2.setDuration(Duration.seconds(1));
+                tra2.setPath(li2);
+
+                FadeTransition fd2 = new FadeTransition(Duration.seconds(1), bl1);
+                fd2.setFromValue(1.0);
+                fd2.setToValue(0.0);
+                p = new ParallelTransition(tra2, fd2);
+                break;
+            case "ba2":
+                Line li3 = new Line();
+                li3.setStartX(200);
+                li3.setStartY(180);
+                li3.setEndX(200);
+                li3.setEndY(250);
+
+                PathTransition tra3 = new PathTransition();
+                tra3.setNode(bl2);
+                tra3.setDuration(Duration.seconds(1));
+                tra3.setPath(li3);
+
+                FadeTransition fd3 = new FadeTransition(Duration.seconds(1), bl2);
+                fd3.setFromValue(1.0);
+                fd3.setToValue(0.0);
+                p = new ParallelTransition(tra3, fd3);
                 break;
         }
         return p;
@@ -522,5 +556,13 @@ public class TelaSistSolarController implements Initializable {
 
     private void iniciaJogo(String nome){
         novoJogol = new JogoController(nome);
+        dNeil = loadTip("neil");
+        dHawking = loadTip("hawking");
+        dBalao1 = loadTip("ba1");
+        dBalao2 = loadTip("ba2");
+        dNeil.play();
+        dHawking.play();
+        dBalao1.play();
+        dBalao2.play();
     }
 }
