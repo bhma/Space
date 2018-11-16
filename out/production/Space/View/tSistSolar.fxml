@@ -80,12 +80,12 @@
             <Image url="@../Images/Netuno.png" />
          </image>
       </ImageView>
-      <Text fx:id="txtNomePlaneta" fill="#7bebd1" layoutX="46.0" layoutY="90.0" nodeOrientation="RIGHT_TO_LEFT" stroke="#2a6a72" strokeType="INSIDE" textAlignment="CENTER">
+      <Text fx:id="txtNomePlaneta" fill="#10def5" layoutX="46.0" layoutY="90.0" nodeOrientation="RIGHT_TO_LEFT" stroke="#4bdeee" strokeType="INSIDE" strokeWidth="0.0" textAlignment="CENTER">
          <font>
             <Font size="35.0" />
          </font>
       </Text>
-      <Text fill="#7bebd1" layoutX="46.0" layoutY="164.0" stroke="#2a6a72" strokeType="OUTSIDE" text="Pontos:" textAlignment="CENTER">
+      <Text fill="#0fd5f5" layoutX="46.0" layoutY="164.0" stroke="#29acc3" strokeType="OUTSIDE" strokeWidth="0.0" text="Pontos:" textAlignment="CENTER">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
@@ -95,7 +95,7 @@
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Label fx:id="lblPont" layoutX="193.0" layoutY="140.0" textAlignment="CENTER" textFill="#86cdc2">
+      <Label fx:id="lblPont" layoutX="193.0" layoutY="140.0" textAlignment="CENTER" textFill="#2fd9fc">
          <font>
             <Font name="DejaVu Sans Bold" size="25.0" />
          </font>

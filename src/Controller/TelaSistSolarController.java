@@ -207,7 +207,40 @@ public class TelaSistSolarController implements Initializable {
             limpaPont(true);
             lblPont.setText("");
             novoJogol.setPontos(0);
-            
+            obMerc.stop();
+            obVenus.stop();
+            obTerra.stop();
+            obMart.stop();
+            obJup.stop();
+            obSat.stop();
+            obUra.stop();
+            obNetu.stop();
+            if(imgMerc.getLayoutX() != 1824 && imgMerc.getLayoutY() != 428 ||
+               imgVenus.getLayoutX() != 1820 && imgVenus.getLayoutY() != 78 ||
+               imgTerra.getLayoutX() != 1816 && imgTerra.getLayoutY() != 812 ||
+               imgMart.getLayoutX() != 1825 && imgMart.getLayoutY() != 322 ||
+               imgJup.getLayoutX() != 1795 && imgJup.getLayoutY() != 926 ||
+               imgSatur.getLayoutX() != 1805 && imgSatur.getLayoutY() != 211 ||
+               imgUrano.getLayoutX() != 1811 && imgUrano.getLayoutY() != 677 ||
+               imgNetu.getLayoutX() != 1820 && imgNetu.getLayoutY() != 588){
+
+                imgMerc.setLayoutX(1824);
+                imgMerc.setLayoutY(428);
+                imgVenus.setLayoutX(1820);
+                imgVenus.setLayoutY(78);
+                imgTerra.setLayoutX(1816);
+                imgTerra.setLayoutY(812);
+                imgMart.setLayoutX(1825);
+                imgMart.setLayoutY(322);
+                imgJup.setLayoutX(1795);
+                imgJup.setLayoutY(926);
+                imgSatur.setLayoutX(1805);
+                imgSatur.setLayoutY(211);
+                imgUrano.setLayoutX(1811);
+                imgUrano.setLayoutY(677);
+                imgNetu.setLayoutX(1820);
+                imgNetu.setLayoutY(588);
+            }
         });
         eliMerc.setOnMouseClicked(event -> {
             dNeil = loadTip("neil");
