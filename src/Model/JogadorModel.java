@@ -2,9 +2,14 @@ package Model;
 
 public class JogadorModel {
     private String nome;
-    private int pontos;
+    private int pontosSistSol;
+    private int pontosAdvPla;
+    private int pontosConste;
+    private int pontosCaPla;
+    private int total;
 
-    public JogadorModel() {
+    public JogadorModel(String nome) {
+        this.nome = nome;
     }
 
     public String getNome() {
@@ -15,11 +20,55 @@ public class JogadorModel {
         this.nome = nome;
     }
 
-    public int getPontos() {
-        return pontos;
+    public int getPontosSistSol() {
+        return pontosSistSol;
     }
 
-    public void setPontos(int pontos) {
-        this.pontos = pontos;
+    public void setPontosSistSol(int pontosSistSol) {
+        this.pontosSistSol = pontosSistSol;
+    }
+
+    public int getPontosAdvPla() {
+        return pontosAdvPla;
+    }
+
+    public void setPontosAdvPla(int pontosAdvPla) {
+        this.pontosAdvPla = pontosAdvPla;
+    }
+
+    public int getPontosConste() {
+        return pontosConste;
+    }
+
+    public void setPontosConste(int pontosConste) {
+        this.pontosConste = pontosConste;
+    }
+
+    public int getPontosCaPla() {
+        return pontosCaPla;
+    }
+
+    public void setPontosCaPla(int pontosCaPla) {
+        this.pontosCaPla = pontosCaPla;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal() {
+        this.total = this.getPontosAdvPla() + this.getPontosCaPla() + this.getPontosConste() + this.getPontosSistSol();
+    }
+
+    @Override
+    public String toString() {
+        return "JogadorModel{" +
+                "Nome = '" + nome + '\'' +
+                ", pontosSistSol = " + pontosSistSol +
+                ", pontosAdvPla = " + pontosAdvPla +
+                ", pontosConste = " + pontosConste +
+                ", pontosCaPla = " + pontosCaPla +
+                ", total = " + total +
+                '}';
     }
 }

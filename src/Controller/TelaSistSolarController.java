@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.JogadorModel;
 import View.TelaSistSolar;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
@@ -35,6 +36,7 @@ public class TelaSistSolarController implements Initializable {
     @FXML private ImageView imgNeil;
     @FXML private ImageView bl2;
     @FXML private ImageView bl1;
+    @FXML private ImageView blDicaMerc;
     @FXML private Text txtNomePlaneta;
     @FXML private Text txtAviso;
     @FXML private Label lblPont;
@@ -42,13 +44,13 @@ public class TelaSistSolarController implements Initializable {
     @FXML private Circle p1, p2, p3, p4, p5, p6, p7, p8;
 
 
-    private JogoController novoJogol;
+    private JogoController novoJogo;
     private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu, recMerc;
     private ParallelTransition dHawking, dNeil, dBalao1, dBalao2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        iniciaJogo(TelaNomeController.getNomeJogador());
+        iniciaJogo(TelaNomeController.getJogador());
         imgSun.setOnMouseEntered(event -> {
             txtAviso.setText("");
         });
@@ -125,42 +127,42 @@ public class TelaSistSolarController implements Initializable {
             limpaNomePlanet();
         });
         imgMerc.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgMerc.getLayoutX(), imgMerc.getLayoutY(), "Merc");
+            this.novoJogo.verificaPosicao(imgMerc.getLayoutX(), imgMerc.getLayoutY(), "Merc");
             mostraPontos();
             obMerc = orbitar("Merc");
         });
         imgVenus.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgVenus.getLayoutX(), imgVenus.getLayoutY(), "Venus");
+            this.novoJogo.verificaPosicao(imgVenus.getLayoutX(), imgVenus.getLayoutY(), "Venus");
             mostraPontos();
             obVenus = orbitar("Venus");
         });
         imgTerra.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgTerra.getLayoutX(), imgTerra.getLayoutY(), "Terra");
+            this.novoJogo.verificaPosicao(imgTerra.getLayoutX(), imgTerra.getLayoutY(), "Terra");
             mostraPontos();
             obTerra = orbitar("Terra");
         });
         imgMart.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgMart.getLayoutX(), imgMart.getLayoutY(), "Mart");
+            this.novoJogo.verificaPosicao(imgMart.getLayoutX(), imgMart.getLayoutY(), "Mart");
             mostraPontos();
             obMart = orbitar("Mart");
         });
         imgJup.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgJup.getLayoutX(), imgJup.getLayoutY(), "Jupt");
+            this.novoJogo.verificaPosicao(imgJup.getLayoutX(), imgJup.getLayoutY(), "Jupt");
             mostraPontos();
             obJup = orbitar("Jup");
         });
         imgSatur.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgSatur.getLayoutX(), imgSatur.getLayoutY(), "Satur");
+            this.novoJogo.verificaPosicao(imgSatur.getLayoutX(), imgSatur.getLayoutY(), "Satur");
             mostraPontos();
             obSat = orbitar("Sat");
         });
         imgUrano.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgUrano.getLayoutX(), imgUrano.getLayoutY(), "Ura");
+            this.novoJogo.verificaPosicao(imgUrano.getLayoutX(), imgUrano.getLayoutY(), "Ura");
             mostraPontos();
             obUra = orbitar("Ura");
         });
         imgNetu.setOnMouseReleased(event -> {
-            this.novoJogol.verificaPosicao(imgNetu.getLayoutX(), imgNetu.getLayoutY(), "Netu");
+            this.novoJogo.verificaPosicao(imgNetu.getLayoutX(), imgNetu.getLayoutY(), "Netu");
             mostraPontos();
             obNetu = orbitar("Netu");
         });
@@ -173,7 +175,7 @@ public class TelaSistSolarController implements Initializable {
         });
         final long tm = System.nanoTime();
         btSub.setOnMouseClicked(event -> {
-            if(this.novoJogol.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart, imgJup, imgSatur, imgUrano, imgNetu)){
+            if(this.novoJogo.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart, imgJup, imgSatur, imgUrano, imgNetu)){
                 limpaPont(false);
                 txtNomePlaneta.setText("Parabéns");
                 obMerc.play();
@@ -181,10 +183,12 @@ public class TelaSistSolarController implements Initializable {
                 obTerra.play();
                 obMart.play();
                 obJup.play();
-
                 obSat.play();
                 obUra.play();
                 obNetu.play();
+                this.novoJogo.getJogador().setPontosSistSol(this.novoJogo.getPontos());
+                this.novoJogo.getJogador().setTotal();
+                System.out.println(this.novoJogo.getJogador());
             }else{
                 txtAviso.setText("Algum planeta esta fora de sua órbita!");
             }
@@ -246,6 +250,7 @@ public class TelaSistSolarController implements Initializable {
         });
         imgNeil.setOnMouseClicked(event -> {
             if(imgNeil.getOpacity() != 0.0){
+                System.out.println("estou clicando!");
                 dNeil = closeTip("neil");
                 dBalao1 = closeTip("ba1");
                 dNeil.play();
@@ -372,7 +377,7 @@ public class TelaSistSolarController implements Initializable {
     }
 
     public void mostraPontos(){
-        lblPont.setText(Integer.toString(novoJogol.getPontos()));
+        lblPont.setText(Integer.toString(novoJogo.getPontos()));
     }
     public void limpaPont(boolean s){
         if(s == false){
@@ -468,6 +473,23 @@ public class TelaSistSolarController implements Initializable {
                 fd3.setToValue(1.0);
                 p = new ParallelTransition(tra3, fd3);
                 break;
+            case "ba3":
+                Line li4 = new Line();
+                li4.setStartX(200);
+                li4.setStartY(250);
+                li4.setEndX(200);
+                li4.setEndY(180);
+
+                PathTransition tra4 = new PathTransition();
+                tra4.setNode(blDicaMerc);
+                tra4.setDuration(Duration.seconds(1));
+                tra4.setPath(li4);
+
+                FadeTransition fd4 = new FadeTransition(Duration.seconds(1), blDicaMerc);
+                fd4.setFromValue(0.0);
+                fd4.setToValue(1.0);
+                p = new ParallelTransition(tra4, fd4);
+                break;
         }
 
         return p;
@@ -544,6 +566,23 @@ public class TelaSistSolarController implements Initializable {
                 fd3.setToValue(0.0);
                 p = new ParallelTransition(tra3, fd3);
                 break;
+            case "ba3":
+                Line li4 = new Line();
+                li4.setStartX(200);
+                li4.setStartY(180);
+                li4.setEndX(200);
+                li4.setEndY(250);
+
+                PathTransition tra4 = new PathTransition();
+                tra4.setNode(blDicaMerc);
+                tra4.setDuration(Duration.seconds(1));
+                tra4.setPath(li4);
+
+                FadeTransition fd4 = new FadeTransition(Duration.seconds(1), blDicaMerc);
+                fd4.setFromValue(1.0);
+                fd4.setToValue(0.0);
+                p = new ParallelTransition(tra4, fd4);
+                break;
         }
         return p;
     }
@@ -554,8 +593,8 @@ public class TelaSistSolarController implements Initializable {
         txtNomePlaneta.setText("");
     }
 
-    private void iniciaJogo(String nome){
-        novoJogol = new JogoController(nome);
+    private void iniciaJogo(JogadorModel jog){
+        novoJogo = new JogoController(jog);
         dNeil = loadTip("neil");
         dHawking = loadTip("hawking");
         dBalao1 = loadTip("ba1");
@@ -565,4 +604,16 @@ public class TelaSistSolarController implements Initializable {
         dBalao1.play();
         dBalao2.play();
     }
+
+    /*public ImageView trocaImg(String planet){
+        Image img;
+        ImageView bl = new ImageView();
+        switch (planet){
+            case "merc":
+                img = new Image(new File("Images/balao_dica_merc.png").toURI().toString());
+                bl.setImage(img);
+                break;
+        }
+        return bl;
+    }*/
 }

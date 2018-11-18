@@ -1,9 +1,10 @@
 package Controller;
 
+import Model.JogadorModel;
 import javafx.scene.image.ImageView;
 
 public class JogoController {
-    private String jogador;
+    private JogadorModel jogador;
     private int id;
     private int pontos;
     private int qtdDicasUsadas;
@@ -13,15 +14,15 @@ public class JogoController {
     private boolean eMerc = false, eVenus= false, eTerra= false, eMart= false,
             eJup= false, eSat= false, eUra= false, eNetu= false;
 
-    public JogoController(String jogador) {
+    public JogoController(JogadorModel jogador) {
         this.jogador = jogador;
     }
 
-    public String getJogador() {
+    public JogadorModel getJogador() {
         return jogador;
     }
 
-    public void setJogador(String jogador) {
+    public void setJogador(JogadorModel jogador) {
         this.jogador = jogador;
     }
 

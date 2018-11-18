@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.JogadorModel;
 import View.TelaNome;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,7 +17,7 @@ public class TelaNomeController implements Initializable {
     @FXML private Button btContinua;
     @FXML private Button btVoltar;
     @FXML private Text txtErro;
-     private static String nomeJogador;
+     private static JogadorModel jogador;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -25,6 +26,7 @@ public class TelaNomeController implements Initializable {
                 txtErro.setText("Digite mais letras.");
             }else{
                 try {
+                    jogador = new JogadorModel(txfDigNome.getText());
                     Transition.abreTelaModoJogo(TelaNome.getTelaJogarStage());
                 } catch (IOException e) {
                     System.err.println(e);
@@ -40,7 +42,11 @@ public class TelaNomeController implements Initializable {
         });
     }
 
-    public static String getNomeJogador() {
-        return nomeJogador;
+    public static JogadorModel getJogador() {
+        return jogador;
+    }
+
+    public static void setJogador(JogadorModel jogador) {
+        TelaNomeController.jogador = jogador;
     }
 }
