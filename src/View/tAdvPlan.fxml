@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaAdvPlanController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/space3.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btVoltar" alignment="CENTER" layoutX="51.0" layoutY="636.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="VOLTAR" />
+      <ImageView fx:id="imgTerra" fitHeight="259.0" fitWidth="278.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/terraAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgMerc" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/mercAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgVenus" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/venusAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgmart" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/martAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgJup" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/jupAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgSat" fitHeight="187.0" fitWidth="267.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/satAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgUra" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/uraAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgNetu" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/netuAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgPlut" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/plutAlt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgHawking" fitHeight="150.0" fitWidth="200.0" layoutX="1085.0" layoutY="522.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Hawking.png" />
+         </image>
+      </ImageView>
+      <Text fill="#0fd5f5" layoutX="49.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pontos:">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblPonto" layoutX="191.0" layoutY="84.0" textFill="#0fd5f5">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDicas" alignment="TOP_LEFT" layoutX="979.0" layoutY="84.0" prefHeight="390.0" prefWidth="267.0" textFill="#2fbbd0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btDica" alignment="CENTER" layoutX="582.0" layoutY="587.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="121.0" stylesheets="@../css/button_black_small.css" text="DICA" />
+      <Button fx:id="btVerif" alignment="CENTER" layoutX="558.0" layoutY="522.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="170.0" stylesheets="@../css/button_black_small.css" text="INICIAR" />
+      <TextField fx:id="txfPlanet" layoutX="547.0" layoutY="456.0" prefHeight="36.0" prefWidth="192.0" />
+   </children>
+</AnchorPane>

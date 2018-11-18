@@ -3,18 +3,16 @@ package Controller;
 import Model.JogadorModel;
 import javafx.scene.image.ImageView;
 
-public class JogoController {
+public class JogoSistSolarController {
     private JogadorModel jogador;
-    private int id;
     private int pontos;
-    private int qtdDicasUsadas;
 
     private boolean vMerc = false, vVenus= false, vTerra= false, vMart= false,
             vJup= false, vSat= false, vUra= false, vNetu= false;
     private boolean eMerc = false, eVenus= false, eTerra= false, eMart= false,
             eJup= false, eSat= false, eUra= false, eNetu= false;
 
-    public JogoController(JogadorModel jogador) {
+    public JogoSistSolarController(JogadorModel jogador) {
         this.jogador = jogador;
     }
 
@@ -26,28 +24,12 @@ public class JogoController {
         this.jogador = jogador;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getPontos() {
         return pontos;
     }
 
     public void setPontos(int pontos) {
         this.pontos = pontos;
-    }
-
-    public int getQtdDicasUsadas() {
-        return qtdDicasUsadas;
-    }
-
-    public void setQtdDicasUsadas(int qtdDicasUsadas) {
-        this.qtdDicasUsadas = qtdDicasUsadas;
     }
 
     public void verificaPosicao(double x, double y, String planet){

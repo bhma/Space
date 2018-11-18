@@ -44,7 +44,7 @@ public class TelaSistSolarController implements Initializable {
     @FXML private Circle p1, p2, p3, p4, p5, p6, p7, p8;
 
 
-    private JogoController novoJogo;
+    private JogoSistSolarController novoJogo;
     private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu, recMerc;
     private ParallelTransition dHawking, dNeil, dBalao1, dBalao2;
 
@@ -594,7 +594,7 @@ public class TelaSistSolarController implements Initializable {
     }
 
     private void iniciaJogo(JogadorModel jog){
-        novoJogo = new JogoController(jog);
+        novoJogo = new JogoSistSolarController(jog);
         dNeil = loadTip("neil");
         dHawking = loadTip("hawking");
         dBalao1 = loadTip("ba1");

@@ -32,6 +32,12 @@ public class Transition {
         tSisSolar.start(new Stage());
     }
 
+    public static void abreTelaAdvPlan(Stage stage) throws IOException {
+        TelaAdvPlan telaAdvPlan = new TelaAdvPlan();
+        fecha(stage);
+        telaAdvPlan.start(new Stage());
+    }
+
     public static void fecha(Stage stage){
         stage.close();
     }

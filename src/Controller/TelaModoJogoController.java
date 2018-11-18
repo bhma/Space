@@ -32,5 +32,12 @@ public class TelaModoJogoController implements Initializable {
                 e.printStackTrace();
             }
         });
+        btAdvPlaneta.setOnMouseClicked(event -> {
+            try {
+                Transition.abreTelaAdvPlan(TelaModoJogo.getTelaModoJogoStage());
+            } catch (IOException e) {
+                System.err.println(e);
+            }
+        });
     }
 }
