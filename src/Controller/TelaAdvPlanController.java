@@ -7,15 +7,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class TelaAdvPlanController implements Initializable {
@@ -34,38 +33,43 @@ public class TelaAdvPlanController implements Initializable {
     @FXML private ImageView imgPlut;
     @FXML private ImageView imgHawking;
     @FXML private Label lblPonto;
+    @FXML private Label lblDicas;
     @FXML private TextField txfPlanet;
 
     private JogoAdvPlanController novoJogo;
     private FadeTransition fd;
-    boolean vMerc = false, vVenus = false, vTerra = false, vMart = false,
-            vJup = false, vSat = false, vUra = false, vNetu = false, vPlut = false;
-    //private Random n;
-    private int pla, c = 1;
-
+    private int c = 1;
+    private ArrayList<Integer> num;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         iniciaJogo(TelaNomeController.getJogador());
+
         txfPlanet.setOnKeyPressed(event -> {
             if(event.getCode() == KeyCode.ENTER){
                 System.out.println(txfPlanet.getText());
             }
         });
         btVerif.setOnMouseClicked(event -> {
-            if( c < 10){
+            if( c <= 9){
                 if(btVerif.getText().equals("INICIAR") == true){
                     btVerif.setText("PRÓXIMO");
-                    //pla = n.nextInt(8) + 1;
-                    fd = loadPlanet(c);
+                    //v = n.nextInt(8) + 1;
+                    fd = loadPlanet(num.get(c - 1));
                     fd.play();
                 }else {
-                    fd = closePlanet(c - 1);
+                    fd = closePlanet(num.get(c - 1));
                     fd.play();
-                    //pla = n.nextInt(8) + 1;
-                    fd = loadPlanet(c);
-                    fd.play();
+                    //v = n.nextInt(8) + 1;
+                    if(c == 9){
+                        fd = loadPlanet(num.get(8));
+                        fd.play();
+                    }else{
+                        fd = loadPlanet(num.get(c));
+                        fd.play();
+                    }
+                    System.out.println(num.get(c - 1));
+                    c++;
                 }
-                c++;
             }else{
                 System.out.println("voce ja viu todos os planetas do nosso sistema solar!");
             }
@@ -86,39 +90,30 @@ public class TelaAdvPlanController implements Initializable {
         switch (pla){
             case 9:
                 fd.setNode(imgMerc);
-                vMerc = true;
                 break;
             case 8:
                 fd.setNode(imgVenus);
-                vVenus = true;
                 break;
             case 7:
                 fd.setNode(imgTerra);
-                vTerra= true;
                 break;
             case 6:
                 fd.setNode(imgmart);
-                vMart = true;
                 break;
             case 5:
                 fd.setNode(imgJup);
-                vJup = true;
                 break;
             case 4:
                 fd.setNode(imgSat);
-                vSat = true;
                 break;
             case 3:
                 fd.setNode(imgUra);
-                vUra = true;
                 break;
             case 2:
                 fd.setNode(imgNetu);
-                vNetu= true;
                 break;
             case 1:
                 fd.setNode(imgPlut);
-                vPlut = true;
                 break;
         }
         return fd;
@@ -162,6 +157,10 @@ public class TelaAdvPlanController implements Initializable {
 
     private void iniciaJogo(JogadorModel jog){
         novoJogo = new JogoAdvPlanController(jog);
-        //n = new Random();
+        num = new ArrayList();
+        for(int i = 1; i <= 9; i++){
+            num.add(i);
+        }
+        Collections.shuffle(num);
     }
 }

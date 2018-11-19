@@ -17,52 +17,52 @@
          </image>
       </ImageView>
       <Button fx:id="btVoltar" alignment="CENTER" layoutX="51.0" layoutY="636.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="VOLTAR" />
-      <ImageView fx:id="imgTerra" fitHeight="259.0" fitWidth="278.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgTerra" fitHeight="259.0" fitWidth="278.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/terraAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgMerc" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgMerc" fitHeight="259.0" fitWidth="272.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/mercAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgVenus" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgVenus" fitHeight="259.0" fitWidth="272.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/venusAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgmart" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgmart" fitHeight="259.0" fitWidth="272.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/martAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgJup" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgJup" fitHeight="259.0" fitWidth="272.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/jupAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgSat" fitHeight="187.0" fitWidth="267.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgSat" fitHeight="187.0" fitWidth="267.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/satAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgUra" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgUra" fitHeight="259.0" fitWidth="272.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/uraAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgNetu" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgNetu" fitHeight="259.0" fitWidth="272.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/netuAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgPlut" fitHeight="259.0" fitWidth="272.0" layoutX="500.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgPlut" fitHeight="259.0" fitWidth="272.0" layoutX="514.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/plutAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgHawking" fitHeight="150.0" fitWidth="200.0" layoutX="1085.0" layoutY="522.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgHawking" fitHeight="150.0" fitWidth="200.0" layoutX="1092.0" layoutY="522.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Hawking.png" />
          </image>
