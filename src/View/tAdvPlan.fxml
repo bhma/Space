@@ -85,5 +85,6 @@
       <Button fx:id="btDica" alignment="CENTER" layoutX="582.0" layoutY="587.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="121.0" stylesheets="@../css/button_black_small.css" text="DICA" />
       <Button fx:id="btVerif" alignment="CENTER" layoutX="558.0" layoutY="522.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="170.0" stylesheets="@../css/button_black_small.css" text="INICIAR" />
       <TextField fx:id="txfPlanet" layoutX="547.0" layoutY="456.0" prefHeight="36.0" prefWidth="192.0" />
+      <Text fill="#0fc9ee" layoutX="51.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="asdasdsd" />
    </children>
 </AnchorPane>

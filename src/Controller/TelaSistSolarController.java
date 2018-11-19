@@ -188,7 +188,6 @@ public class TelaSistSolarController implements Initializable {
                 obNetu.play();
                 this.novoJogo.getJogador().setPontosSistSol(this.novoJogo.getPontos());
                 this.novoJogo.getJogador().setTotal();
-                System.out.println(this.novoJogo.getJogador());
             }else{
                 txtAviso.setText("Algum planeta esta fora de sua órbita!");
             }

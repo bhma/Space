@@ -1,6 +1,8 @@
 package Model;
 
-public class JogadorModel {
+import java.io.Serializable;
+
+public class JogadorModel implements Serializable {
     private String nome;
     private int pontosSistSol;
     private int pontosAdvPla;
