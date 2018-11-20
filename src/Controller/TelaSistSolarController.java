@@ -207,6 +207,13 @@ public class TelaSistSolarController implements Initializable {
                 System.out.println("Uma órbita está vazia!!");
             }
         });
+        btReco.setOnMouseClicked(event -> {
+            try {
+                Transition.abreTelaSistSolar(TelaSistSolar.getTelaSistSolarStage());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         eliMerc.setOnMouseClicked(event -> {
             dNeil = loadTip("neil");
             dNeil.play();
