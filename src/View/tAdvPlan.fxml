@@ -62,7 +62,7 @@
             <Image url="@../Images/plutAlt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgHawking" fitHeight="150.0" fitWidth="200.0" layoutX="1092.0" layoutY="522.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgHawking" fitHeight="167.0" fitWidth="129.0" layoutX="1104.0" layoutY="492.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Hawking.png" />
          </image>
@@ -77,14 +77,13 @@
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="lblDicas" alignment="TOP_LEFT" layoutX="979.0" layoutY="84.0" prefHeight="390.0" prefWidth="267.0" textFill="#2fbbd0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
       <Button fx:id="btDica" alignment="CENTER" layoutX="582.0" layoutY="587.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="121.0" stylesheets="@../css/button_black_small.css" text="DICA" />
       <Button fx:id="btVerif" alignment="CENTER" layoutX="558.0" layoutY="522.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="170.0" stylesheets="@../css/button_black_small.css" text="INICIAR" />
       <TextField fx:id="txfPlanet" layoutX="547.0" layoutY="456.0" prefHeight="36.0" prefWidth="192.0" />
-      <Text fill="#0fc9ee" layoutX="51.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="asdasdsd" />
+      <ImageView fitHeight="282.0" fitWidth="322.0" layoutX="861.0" layoutY="196.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/balaoAdvPla.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

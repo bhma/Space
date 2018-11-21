@@ -34,7 +34,7 @@
             <Font name="Lemon/Milk" size="24.0" />
          </font>
       </Button>
-      <Text fill="#0fd5f5" layoutX="288.0" layoutY="152.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="FINAL SPACE" textAlignment="CENTER">
+      <Text fill="#0fd5f5" layoutX="288.0" layoutY="202.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.8) , 20, 0 , 10 , 10 );" text="FINAL SPACE" textAlignment="CENTER">
          <font>
             <Font name="DejaVu Sans Bold" size="96.0" />
          </font>
