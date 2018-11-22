@@ -26,8 +26,8 @@
             <Font name="DejaVu Sans Bold" size="40.0" />
          </font>
       </Label>
-      <Button fx:id="btContinua" layoutX="678.0" layoutY="453.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="CONTINUAR" />
-      <Button fx:id="btVoltar" layoutX="401.0" layoutY="453.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="VOLTAR" />
+      <Button fx:id="btContinua" layoutX="678.0" layoutY="453.0" mnemonicParsing="false" stylesheets="@../css/style.css" text="CONTINUAR" />
+      <Button fx:id="btVoltar" layoutX="401.0" layoutY="453.0" mnemonicParsing="false" stylesheets="@../css/style.css" text="VOLTAR" />
       <Text fx:id="txtErro" fill="#140101" layoutX="416.0" layoutY="400.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: #140000; -fx-fill: #fafafa;">
          <font>
             <Font name="DejaVu Sans" size="25.0" />

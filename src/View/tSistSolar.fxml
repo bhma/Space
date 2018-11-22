@@ -68,8 +68,8 @@
             <Image url="@../Images/balao_dica_merc.png" />
          </image>
       </ImageView>
-      <Button fx:id="btVoltar" layoutX="30.0" layoutY="989.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="VOLTAR" />
-      <Button fx:id="btSub" layoutX="199.0" layoutY="989.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="SUBMIT" />
+      <Button fx:id="btVoltar" layoutX="30.0" layoutY="989.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="VOLTAR" />
+      <Button fx:id="btSub" layoutX="199.0" layoutY="989.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="SUBMIT" />
       <ImageView fx:id="imgVenus" fitHeight="63.0" fitWidth="63.0" layoutX="1820.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Venus1.png" />
@@ -125,7 +125,7 @@
             <Font name="DejaVu Sans Bold" size="25.0" />
          </font>
       </Label>
-      <Button fx:id="btPause" layoutX="37.0" layoutY="917.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="PAUSA" />
-      <Button fx:id="btReco" layoutX="173.0" layoutY="917.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="RECOMEÇAR" />
+      <Button fx:id="btPause" layoutX="37.0" layoutY="917.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="PAUSA" />
+      <Button fx:id="btReco" layoutX="173.0" layoutY="917.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="RECOMEÇAR" />
    </children>
 </AnchorPane>

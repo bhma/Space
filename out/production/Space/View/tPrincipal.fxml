@@ -19,17 +19,17 @@
             <Image url="@../Images/asteroid2.png" />
          </image>
       </ImageView>
-      <Button fx:id="btJogar" layoutX="561.0" layoutY="382.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="JOGAR" textAlignment="JUSTIFY" textFill="WHITE">
+      <Button fx:id="btJogar" layoutX="561.0" layoutY="382.0" mnemonicParsing="false" stylesheets="@../css/style.css" text="JOGAR" textAlignment="JUSTIFY" textFill="WHITE">
          <font>
             <Font name="Lemon/Milk" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="btOpcao" layoutX="546.0" layoutY="479.0" mnemonicParsing="false" stylesheets="@../css/button_black.css" text="OPÇÕES" textAlignment="JUSTIFY" textFill="WHITE">
+      <Button fx:id="btOpcao" layoutX="546.0" layoutY="479.0" mnemonicParsing="false" stylesheets="@../css/style.css" text="OPÇÕES" textAlignment="JUSTIFY" textFill="WHITE">
          <font>
             <Font name="Lemon/Milk" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="btSair" layoutX="578.0" layoutY="588.0" mnemonicParsing="false" onAction="#fechaJogo" stylesheets="@../css/button_black.css" text="SAIR" textAlignment="JUSTIFY" textFill="#fffdfd">
+      <Button fx:id="btSair" layoutX="578.0" layoutY="588.0" mnemonicParsing="false" onAction="#fechaJogo" stylesheets="@../css/style.css" text="SAIR" textAlignment="JUSTIFY" textFill="#fffdfd">
          <font>
             <Font name="Lemon/Milk" size="24.0" />
          </font>

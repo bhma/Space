@@ -1,6 +1,7 @@
 package dao;
 
 import Model.JogadorModel;
+import View.TelaPontu;
 
 import java.io.*;
 
@@ -83,7 +84,7 @@ public class DaoController {
         }
     }
 
-    public static void writejogador(JogadorModel jog){
+    public static void writeJogador(JogadorModel jog){
         try {
             if(output != null){
                 output.writeObject(jog);
@@ -93,6 +94,21 @@ public class DaoController {
         }catch (IOException ioException){
             System.err.println("Error ao gravar jogador!");
             System.exit(1);
+        }
+    }
+    public static void readJogador(){
+        JogadorModel jogador;
+        if(input != null){
+            try{
+                while(true){
+                    jogador = (JogadorModel) input.readObject();
+                    TelaPontu.getListaJogador().add(jogador);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ public class TelaOpcao extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("tOpcao.fxml"));
-        primaryStage.setTitle("JOGAR");
+        primaryStage.setTitle("OPÇÕES");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         setTelaOpcaoStage(primaryStage);
