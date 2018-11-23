@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class TelaPontu extends Application {
     private static Stage telaPontuStage;
-    private static ArrayList<JogadorModel> listaJogador;
 
     public static void main(String[] args) {
         launch(args);
@@ -25,7 +24,6 @@ public class TelaPontu extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         setTelaPontuStage(primaryStage);
-        listaJogador = new ArrayList<>();
     }
 
     public static Stage getTelaPontuStage() {
@@ -36,11 +34,4 @@ public class TelaPontu extends Application {
         TelaPontu.telaPontuStage = telaPontuStage;
     }
 
-    public static ArrayList<JogadorModel> getListaJogador() {
-        return listaJogador;
-    }
-
-    public static void setListaJogador(ArrayList<JogadorModel> listaJogador) {
-        TelaPontu.listaJogador = listaJogador;
-    }
 }

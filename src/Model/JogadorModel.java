@@ -2,7 +2,7 @@ package Model;
 
 import java.io.Serializable;
 
-public class JogadorModel implements Serializable {
+public class JogadorModel implements Serializable, Comparable<JogadorModel>{
     private String nome;
     private int pontosSistSol;
     private int pontosAdvPla;
@@ -72,5 +72,14 @@ public class JogadorModel implements Serializable {
                 ", pontosCaPla = " + pontosCaPla +
                 ", total = " + total +
                 '}';
+    }
+    @Override
+    public int compareTo(JogadorModel o) {
+        if(this.total < o.getTotal()){
+            return -1;
+        }else if(this.total > o.getTotal()){
+            return 1;
+        }
+        return 0;
     }
 }

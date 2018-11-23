@@ -4,15 +4,61 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaPontuController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/space2.jpg" />
+            <Image url="@../Images/space5.jpg" />
          </image>
       </ImageView>
       <Button fx:id="btVoltar" layoutX="61.0" layoutY="626.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="VOLTAR" />
+      <Text fill="#0fd5f5" layoutX="525.0" layoutY="140.0" stroke="#0a0a0a" strokeType="OUTSIDE" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.8) , 20, 0 , 10 , 10 );" text="Scores">
+         <font>
+            <Font name="DejaVu Sans Bold" size="60.0" />
+         </font>
+      </Text>
+      <Text fx:id="nomeJog1" fill="#0fd5f5" layoutX="423.0" layoutY="264.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Bruno" wrappingWidth="205.99607825279236">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="nomeJog2" fill="#0fd5f5" layoutX="423.0" layoutY="325.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Pedro" wrappingWidth="205.99608600139618">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="nomeJog3" fill="#0fd5f5" layoutX="423.0" layoutY="384.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Danilo" wrappingWidth="205.99608600139618">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="nomeJog4" fill="#0fd5f5" layoutX="423.0" layoutY="440.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Teo" wrappingWidth="205.99608600139618">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="pontJog1" fill="#0fd5f5" layoutX="732.0" layoutY="264.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="pontJog2" fill="#0fd5f5" layoutX="732.0" layoutY="325.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="pontJog3" fill="#0fd5f5" layoutX="732.0" layoutY="384.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="pontJog4" fill="#0fd5f5" layoutX="732.0" layoutY="440.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+         <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

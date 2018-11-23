@@ -85,6 +85,7 @@ public class TelaAdvPlanController implements Initializable {
                     fd = closePlanet(num.get(c - 1));
                     fd.play();
                     if(c < 9){
+                        txfPlanet.setVisible(false);
                         fd = loadPlanet(num.get(c));
                         fd.play();
                     }
