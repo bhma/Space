@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
@@ -35,62 +36,78 @@ public class TelaAdvPlanController implements Initializable {
     @FXML private ImageView imgNetu;
     @FXML private ImageView imgPlut;
     @FXML private ImageView imgHawking;
+    @FXML private ImageView imgErr;
+    @FXML private ImageView imgCor;
     @FXML private Label lblPonto;
-    @FXML private Label lblDicas;
     @FXML private TextField txfPlanet;
+    @FXML private Text txDica;
+    @FXML private ImageView imgBalDica;
 
     private JogoAdvPlanController novoJogo;
     private FadeTransition fd;
-    private int c = 1;
+    private int c = 0;
     private ArrayList<Integer> num;
+    private boolean v, e = false;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         iniciaJogo(TelaNomeController.getJogador());
         txfPlanet.setOnKeyPressed(event -> {
             if(event.getCode() == KeyCode.ENTER){
                 if(btVerif.getText().equals("INICIAR") == false){
-                    if(c <= 9){
-                        //System.out.println(txfPlanet.getText());
-                        novoJogo.verificaPlaneta(num.get(c - 1), txfPlanet.getText());
-                        mostraPontos();
-                        txfPlanet.clear();
-                        fd = closePlanet(num.get(c - 1));
-                        fd.play();
-                        if(c < 9){
-                            fd = loadPlanet(num.get(c));
-                            fd.play();
+                    if(c <= 8){
+                        v = novoJogo.verificaPlaneta(num.get(c), txfPlanet.getText());
+                        if(v == true){
+                            mudaPla();
+                            icons(1);
+                        }else if(e == false){
+                            e = true;
+                            icons(2);
+                            txDica.setText("Você errou o nome desse planeta.Tente mais uma vez com a ajuda de uma dica.");
+                            if(imgHawking.getOpacity() == 0){
+                                loadTip();
+                            }
+                        }else{
+                            icons(2);
+                            if(imgHawking.getOpacity() == 1.0){
+                                closeTip();
+                            }
+                            mudaPla();
                         }
-                        /*System.out.println(num.get(c - 1));
-                        System.out.println("O c é: " + c);*/
-                        c++;
                     }else if(btVerif.getText().equals("FINALIZAR")){
                         //System.out.println("ESTAMOS FINALIZANDO");
                     }
-                    if(c == 9){
+                    if(c == 8){
                         btVerif.setText("FINALIZAR");
                     }
                 }
             }
         });
         btVerif.setOnMouseClicked(event -> {
-            if( c <= 9){
+            if( c <= 8){
                 if(btVerif.getText().equals("INICIAR") == true){
                     btVerif.setText("PRÓXIMO");
-                    fd = loadPlanet(num.get(c - 1));
+                    txfPlanet.setVisible(true);
+                    fd = loadPlanet(num.get(c));
                     fd.play();
                 }else {
-                    novoJogo.verificaPlaneta(num.get(c - 1), txfPlanet.getText());
-                    mostraPontos();
-                    txfPlanet.clear();
-                    fd = closePlanet(num.get(c - 1));
-                    fd.play();
-                    if(c < 9){
-                        txfPlanet.setVisible(false);
-                        fd = loadPlanet(num.get(c));
-                        fd.play();
+                    v = novoJogo.verificaPlaneta(num.get(c), txfPlanet.getText());
+                    if(v == true){
+                        icons(1);
+                        mudaPla();
+                    }else if(e == false){
+                        e = true;
+                        icons(2);
+                        txDica.setText("Você errou o nome desse planeta.Tente mais uma vez com a ajuda de uma dica.");
+                        if(imgHawking.getOpacity() == 0){
+                            loadTip();
+                        }
+                    }else{
+                        icons(2);
+                        if(imgHawking.getOpacity() == 1.0){
+                            closeTip();
+                        }
+                        mudaPla();
                     }
-                    //System.out.println(num.get(c - 1));
-                    c++;
                 }
             }else if(btVerif.getText().equals("FINALIZAR")){
                 //System.out.println("ESTAMOS FINALIZANDO");
@@ -99,11 +116,15 @@ public class TelaAdvPlanController implements Initializable {
                 /*System.out.println("O pontos do jogador são: " + this.novoJogo.getJogador().getPontosAdvPla());
                 System.out.println("TODOS OS PONTOS COMPUTADOS, FINALIZADO!");*/
             }
-            if(c == 9){
+            if(c == 8){
                 btVerif.setText("FINALIZAR");
             }
         });
         btDica.setOnMouseClicked(event -> {
+            if(imgHawking.getOpacity() == 0){
+                loadTip();
+                loadTipPla(num.get(c));
+            }
 
         });
         btVoltar.setOnMouseClicked(event -> {
@@ -113,6 +134,62 @@ public class TelaAdvPlanController implements Initializable {
                     e.printStackTrace();
             }
         });
+        imgHawking.setOnMouseClicked(event -> {
+            closeTip();
+        });
+    }
+
+    private void loadTipPla(int pla){
+        switch (pla){
+            case 9:
+                txDica.setText("Em função de sua proximidade do Sol, " +
+                        "este planeta apresenta temperaturas altíssimas. A temperatura média na " +
+                        "superfície é de 126°C, podendo chegar na máxima de 425°C.");
+                break;
+            case 8:
+                txDica.setText("É o planeta mais próximo da Terra." +
+                                "A rotação dele ocorre de leste para oeste, " +
+                                "contrária a todos os planetas do Sistema Solar.");
+                break;
+            case 7:
+                txDica.setText("O Planeta é composto por camadas que partem desde a " +
+                                "superfície terrestre até o núcleo, desse modo são denominadas " +
+                                "litosfera, crosta, manto, astenosfera, núcleo externo e núcleo interno.");
+                break;
+            case 6:
+                txDica.setText("Possui duas pequenas luas de formato irregular: Fobos (medo) e Deimos (pânico). " +
+                                "Seus nomes derivam da mitologia grega e representam os filhos de Ares e Afrodite.");
+                break;
+            case 5:
+                txDica.setText("Esse planeta foi observado a primeira vez por Galileu Galilei, em 1610, quando também foi possível a" +
+                                " identificação de quatro de seus 63 satélites, Io, Europa, Ganimedes e Calisto. A primeira " +
+                                "sonda a visita-lo foi a Pioneer 10 em 1973.");
+                break;
+            case 4:
+                txDica.setText("As observações realizadas indicam que os anéis do planeta são formados por" +
+                                " pedaços de cometas, asteroides e luas despedaçadas. Os anéis mais conhecidos são denominados " +
+                                "A, B e C, mas há sete no total, todos representam letras do alfabeto à medida em que foram descobertos.");
+                break;
+            case 3:
+                txDica.setText("O planeta possui 27 luas conhecidas que são nomeadas com personagens das obras de William" +
+                                " Shakespeare ou Alexander Pope. As primeiras quatro luas, Titania, Oberon, Ariel e " +
+                                "Umbriel foram descobertas entre 1787-1851.");
+                break;
+            case 2:
+                txDica.setText("A sua principal lua, Tritão. Desde que foi descoberto, a primeira volta ao Sol dele ocorreu em 2011. " +
+                                "O planeta é invisível a olho nu por causa de sua extrema distância da Terra. " +
+                                "O campo magnético é cerca de 27 vezes mais potente que o da Terra.");
+                break;
+            case 1:
+                txDica.setStyle("-fx-font-size: 18");
+                txDica.setText("Durante 20 anos dos 248 de sua órbita ele fica mais próximo do sol do que " +
+                                "netuno devido ao fato de sua órbita ser elíptica. Outro fato interessante é " +
+                                "que a órbita de plutão passa pela de netuno em determinado período de seu trajeto, " +
+                                "quando ambos percorrem a mesma órbita em torno do sol.");
+                break;
+            default:
+                System.out.println("fim");
+        }
     }
 
     private void loadTip(){
@@ -132,7 +209,29 @@ public class TelaAdvPlanController implements Initializable {
         fd.setToValue(1.0);
         ParallelTransition p = new ParallelTransition(tra, fd);
         p.play();
+        imgBalDica.setOpacity(1.0);
+        txDica.setOpacity(1.0);
+    }
 
+    private void closeTip(){
+        Line li = new Line();
+        li.setStartX(0);
+        li.setStartY(50);
+        li.setEndX(0);
+        li.setEndY(100);
+
+        PathTransition tra = new PathTransition();
+        tra.setNode(imgHawking);
+        tra.setDuration(Duration.seconds(1));
+        tra.setPath(li);
+
+        FadeTransition fd = new FadeTransition(Duration.seconds(1), imgHawking);
+        fd.setFromValue(1.0);
+        fd.setToValue(0.0);
+        ParallelTransition p = new ParallelTransition(tra, fd);
+        p.play();
+        imgBalDica.setOpacity(0.0);
+        txDica.setOpacity(0.0);
     }
 
     private FadeTransition loadPlanet(int pla){
@@ -211,13 +310,69 @@ public class TelaAdvPlanController implements Initializable {
         lblPonto.setText(Integer.toString(novoJogo.getPontos()));
     }
 
+    private void icons(int i){
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(1));
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1));
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+        switch (i){
+            case 1:
+                fadeIn.setNode(imgCor);
+                fadeIn.play();
+                setTimeout(() -> {
+                    fadeOut.setNode(imgCor);
+                    fadeOut.play();
+                }, 1000);
+                break;
+            case 2:
+                fadeIn.setNode(imgErr);
+                fadeIn.play();
+                setTimeout(() -> {
+                    fadeOut.setNode(imgErr);
+                    fadeOut.play();
+                }, 1000);
+                break;
+        }
+    }
+
     private void iniciaJogo(JogadorModel jog){
         novoJogo = new JogoAdvPlanController(jog);
+        txfPlanet.setVisible(false);
+        txDica.setText("Olá, digite o nome do planeta que é mostrado na tela, " +
+                        "se não souber clique em Dica que eu te ajudo. Boa Sorte!");
         num = new ArrayList();
         for(int i = 1; i <= 9; i++){
             num.add(i);
         }
         Collections.shuffle(num);
         loadTip();
+    }
+
+    private void mudaPla(){
+        mostraPontos();
+        txfPlanet.clear();
+        fd = closePlanet(num.get(c));
+        fd.play();
+        if(c < 8){
+            fd = loadPlanet(num.get(c + 1));
+            fd.play();
+        }else if(c == 8){
+            txfPlanet.setVisible(false);
+        }
+        c++;
+    }
+
+
+    public static void setTimeout(Runnable runnable, int delay) {
+        new Thread(() -> {
+            try {
+                Thread.sleep(delay);
+                runnable.run();
+            } catch (InterruptedException exception) {
+                System.err.println(exception.getMessage());
+            }
+        }).start();
     }
 }

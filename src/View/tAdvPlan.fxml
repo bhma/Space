@@ -16,7 +16,7 @@
             <Image url="@../Images/space3.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btVoltar" alignment="CENTER" layoutX="51.0" layoutY="636.0" mnemonicParsing="false" stylesheets="@../css/button_black_small.css" text="VOLTAR" />
+      <Button fx:id="btVoltar" alignment="CENTER" layoutX="51.0" layoutY="636.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="VOLTAR" />
       <ImageView fx:id="imgTerra" fitHeight="259.0" fitWidth="278.0" layoutX="521.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/terraAlt.png" />
@@ -77,12 +77,23 @@
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btDica" alignment="CENTER" layoutX="582.0" layoutY="587.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="121.0" stylesheets="@../css/button_black_small.css" text="DICA" />
-      <Button fx:id="btVerif" alignment="CENTER" layoutX="558.0" layoutY="522.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="170.0" stylesheets="@../css/button_black_small.css" text="INICIAR" />
+      <Button fx:id="btDica" alignment="CENTER" layoutX="582.0" layoutY="587.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="121.0" styleClass="small-button" stylesheets="@../css/style.css" text="DICA" />
+      <Button fx:id="btVerif" alignment="CENTER" layoutX="558.0" layoutY="522.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="170.0" styleClass="small-button" stylesheets="@../css/style.css" text="INICIAR" />
       <TextField fx:id="txfPlanet" layoutX="547.0" layoutY="456.0" prefHeight="36.0" prefWidth="192.0" />
-      <ImageView fitHeight="282.0" fitWidth="322.0" layoutX="861.0" layoutY="196.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgBalDica" fitHeight="304.0" fitWidth="361.0" layoutX="815.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/balaoAdvPla.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txDica" layoutX="838.0" layoutY="207.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 19;" wrappingWidth="313.9830722808838" />
+      <ImageView fx:id="imgErr" fitHeight="36.0" fitWidth="31.0" layoutX="499.0" layoutY="459.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/icons8-fechar-janela-30.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCor" fitHeight="31.0" fitWidth="31.0" layoutX="499.0" layoutY="459.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/correct.png" />
          </image>
       </ImageView>
    </children>

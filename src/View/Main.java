@@ -22,14 +22,17 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("tPrincipal.fxml"));
         primaryStage.setTitle("FINAL SPACE");
-        media = new Media(this.getClass().getResource("/sounds/Starwars.mp3").toExternalForm());
-        player = new MediaPlayer(media);
-        player.setVolume(0.8);
-        player.setOnEndOfMedia(() -> {
-            player.seek(Duration.ZERO);
-            System.out.println("Loop");
-        });
-        player.play();
+
+        if(player == null){
+            media = new Media(this.getClass().getResource("/sounds/StarWars8Bit.mp3").toExternalForm());
+            player = new MediaPlayer(media);
+            player.setVolume(0.8);
+            player.setOnEndOfMedia(() -> {
+                player.seek(Duration.ZERO);
+                System.out.println("Loop");
+            });
+            player.play();
+        }
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         setMainStage(primaryStage);
