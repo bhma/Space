@@ -22,7 +22,6 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("tPrincipal.fxml"));
         primaryStage.setTitle("FINAL SPACE");
-
         if(player == null){
             media = new Media(this.getClass().getResource("/sounds/StarWars8Bit.mp3").toExternalForm());
             player = new MediaPlayer(media);

@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.JogadorModel;
+import Model.TextosModel;
 import View.TelaSistSolar;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
@@ -36,8 +37,9 @@ public class TelaSistSolarController implements Initializable {
     @FXML private ImageView imgNeil;
     @FXML private ImageView bl2;
     @FXML private ImageView bl1;
-    @FXML private ImageView blDicaMerc;
     @FXML private Text txtNomePlaneta;
+    @FXML private Text txHaw;
+    @FXML private Text txNeil;
     @FXML private Text txtAviso;
     @FXML private Label lblPont;
     @FXML private Ellipse eliUra, eliNetu, eliSat, eliJup, eliMart, eliTerra, eliVenus, eliMerc;
@@ -46,13 +48,17 @@ public class TelaSistSolarController implements Initializable {
 
     private JogoSistSolarController novoJogo;
     private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu, recMerc;
-    private ParallelTransition dHawking, dNeil, dBalao1, dBalao2;
+    private ParallelTransition dHawking, dNeil;// dBalao1, dBalao2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         iniciaJogo(TelaNomeController.getJogador());
         imgSun.setOnMouseEntered(event -> {
+            mostraNome("Sol");
             txtAviso.setText("");
+        });
+        imgSun.setOnMouseExited(event -> {
+            limpaNomePlanet();
         });
         imgTerra.setOnMouseDragged(event -> {
             arrastaImg(imgTerra);
@@ -67,7 +73,7 @@ public class TelaSistSolarController implements Initializable {
             arrastaImg(imgVenus);
         });
         imgVenus.setOnMouseEntered(event -> {
-            mostraNome("Venus");
+            mostraNome("Vênus");
         });
         imgVenus.setOnMouseExited(event -> {
             limpaNomePlanet();
@@ -217,50 +223,79 @@ public class TelaSistSolarController implements Initializable {
         eliMerc.setOnMouseClicked(event -> {
             dNeil = loadTip("neil");
             dNeil.play();
+            bl1.setVisible(true);
+            txNeil.setOpacity(1);
+            txNeil.setText(TextosModel.getTexto1("merc"));
         });
         eliVenus.setOnMouseClicked(event -> {
             dHawking = loadTip("hawking");
             dHawking.play();
+            bl2.setVisible(true);
+            txHaw.setOpacity(1);
+            txHaw.setText(TextosModel.getTexto1("venus"));
         });
         eliTerra.setOnMouseClicked(event -> {
             dNeil = loadTip("neil");
             dNeil.play();
+            txNeil.setStyle("-fx-font-size: 19");
+            bl1.setVisible(true);
+            txNeil.setOpacity(1);
+            txNeil.setText(TextosModel.getTexto1("terra"));
         });
         eliMart.setOnMouseClicked(event -> {
             dHawking = loadTip("hawking");
             dHawking.play();
+            bl2.setVisible(true);
+            txHaw.setOpacity(1);
+            txHaw.setText(TextosModel.getTexto1("mart"));
         });
         eliJup.setOnMouseClicked(event -> {
             dNeil = loadTip("neil");
             dNeil.play();
+            bl1.setVisible(true);
+            txNeil.setOpacity(1);
+            txNeil.setText(TextosModel.getTexto1("jup"));
         });
         eliSat.setOnMouseClicked(event -> {
             dHawking = loadTip("hawking");
             dHawking.play();
+            bl2.setVisible(true);
+            txHaw.setOpacity(1);
+            txHaw.setText(TextosModel.getTexto1("sat"));
         });
         eliUra.setOnMouseClicked(event -> {
             dNeil = loadTip("neil");
             dNeil.play();
+            bl1.setVisible(true);
+            txNeil.setOpacity(1);
+            txNeil.setText(TextosModel.getTexto1("ura"));
         });
         eliNetu.setOnMouseClicked(event -> {
             dHawking = loadTip("hawking");
             dHawking.play();
+            bl2.setVisible(true);
+            txHaw.setOpacity(1);
+            txHaw.setText(TextosModel.getTexto1("netu"));
         });
         imgHawking.setOnMouseClicked(event -> {
             if(imgHawking.getOpacity() != 0.0){
                 dHawking = closeTip("hawking");
-                dBalao2 = closeTip("ba2");
+                bl2.setVisible(false);
+                //dBalao2 = closeTip("ba2");
                 dHawking.play();
-                dBalao2.play();
+//                dBalao2.play();
+                txHaw.setOpacity(0);
             }
         });
         imgNeil.setOnMouseClicked(event -> {
             if(imgNeil.getOpacity() != 0.0){
                 System.out.println("estou clicando!");
                 dNeil = closeTip("neil");
-                dBalao1 = closeTip("ba1");
+                bl1.setVisible(false);
+//                dBalao1 = closeTip("ba1");
                 dNeil.play();
-                dBalao1.play();
+//                dBalao1.play();
+                txNeil.setOpacity(0);
             }
         });
 
@@ -479,23 +514,6 @@ public class TelaSistSolarController implements Initializable {
                 fd3.setToValue(1.0);
                 p = new ParallelTransition(tra3, fd3);
                 break;
-            case "ba3":
-                Line li4 = new Line();
-                li4.setStartX(200);
-                li4.setStartY(250);
-                li4.setEndX(200);
-                li4.setEndY(180);
-
-                PathTransition tra4 = new PathTransition();
-                tra4.setNode(blDicaMerc);
-                tra4.setDuration(Duration.seconds(1));
-                tra4.setPath(li4);
-
-                FadeTransition fd4 = new FadeTransition(Duration.seconds(1), blDicaMerc);
-                fd4.setFromValue(0.0);
-                fd4.setToValue(1.0);
-                p = new ParallelTransition(tra4, fd4);
-                break;
         }
 
         return p;
@@ -572,23 +590,6 @@ public class TelaSistSolarController implements Initializable {
                 fd3.setToValue(0.0);
                 p = new ParallelTransition(tra3, fd3);
                 break;
-            case "ba3":
-                Line li4 = new Line();
-                li4.setStartX(200);
-                li4.setStartY(180);
-                li4.setEndX(200);
-                li4.setEndY(250);
-
-                PathTransition tra4 = new PathTransition();
-                tra4.setNode(blDicaMerc);
-                tra4.setDuration(Duration.seconds(1));
-                tra4.setPath(li4);
-
-                FadeTransition fd4 = new FadeTransition(Duration.seconds(1), blDicaMerc);
-                fd4.setFromValue(1.0);
-                fd4.setToValue(0.0);
-                p = new ParallelTransition(tra4, fd4);
-                break;
         }
         return p;
     }
@@ -603,12 +604,18 @@ public class TelaSistSolarController implements Initializable {
         novoJogo = new JogoSistSolarController(jog);
         dNeil = loadTip("neil");
         dHawking = loadTip("hawking");
-        dBalao1 = loadTip("ba1");
-        dBalao2 = loadTip("ba2");
+        bl1.setVisible(true);
+        bl2.setVisible(true);
+// dBalao1 = loadTip("ba1");
+//        dBalao2 = loadTip("ba2");
         dNeil.play();
         dHawking.play();
-        dBalao1.play();
-        dBalao2.play();
+//        dBalao1.play();
+//        dBalao2.play();
+        txHaw.setText("Olá, eu me chamo Stephen Hawking, para as dicas sumirem basta clicar em mim ou no Neil. Divirta-se!");
+        txNeil.setText("Saudações! Pode me chamar de Neil, para conseguir dicas só precisa clicar em uma órbita. Bom jogo!");
+        txHaw.setOpacity(1);
+        txNeil.setOpacity(1);
     }
 
     /*public ImageView trocaImg(String planet){
