@@ -39,5 +39,12 @@ public class TelaModoJogoController implements Initializable {
                 System.err.println(e);
             }
         });
+        btConst.setOnMouseClicked(event -> {
+            try {
+                Transition.abreTelaConste(TelaModoJogo.getTelaModoJogoStage());
+            } catch (IOException e) {
+                System.err.println(e);
+            }
+        });
     }
 }

@@ -42,6 +42,11 @@ public class Transition {
         telaPontu.start(new Stage());
         fecha(stage);
     }
+    public static void abreTelaConste(Stage stage) throws IOException {
+        TelaConste telaConste = new TelaConste();
+        telaConste.start(new Stage());
+        fecha(stage);
+    }
 
     public static void fecha(Stage stage){
         stage.close();

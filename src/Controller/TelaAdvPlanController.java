@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.JogadorModel;
+import Model.TextosModel;
 import View.TelaAdvPlan;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
@@ -53,7 +54,7 @@ public class TelaAdvPlanController implements Initializable {
         iniciaJogo(TelaNomeController.getJogador());
         txfPlanet.setOnKeyPressed(event -> {
             if(event.getCode() == KeyCode.ENTER){
-                if(imgHawking.getOpacity() == 1){
+                if(imgHawking.getOpacity() == 1.0){
                     closeTip();
                 }
                 if(btVerif.getText().equals("INICIAR") == false){
@@ -65,8 +66,8 @@ public class TelaAdvPlanController implements Initializable {
                         }else if(e == false){
                             e = true;
                             icons(2);
-                            txDica.setText("Você errou o nome desse planeta.Tente mais uma vez com a ajuda de uma dica.");
-                            if(imgHawking.getOpacity() == 0){
+                            txDica.setText("Você errou o nome desse planeta. Tente mais uma vez com a ajuda de uma dica.");
+                            if(imgHawking.getOpacity() == 0.0){
                                 loadTip();
                             }
                         }else{
@@ -76,8 +77,6 @@ public class TelaAdvPlanController implements Initializable {
                             }
                             mudaPla();
                         }
-                    }else if(btVerif.getText().equals("FINALIZAR")){
-                        //System.out.println("ESTAMOS FINALIZANDO");
                     }
                     if(c == 8){
                         btVerif.setText("FINALIZAR");
@@ -86,7 +85,7 @@ public class TelaAdvPlanController implements Initializable {
             }
         });
         btVerif.setOnMouseClicked(event -> {
-            if(imgHawking.getOpacity() == 1){
+            if(imgHawking.getOpacity() == 1.0){
                 closeTip();
             }
             if( c <= 8){
@@ -104,7 +103,7 @@ public class TelaAdvPlanController implements Initializable {
                         e = true;
                         icons(2);
                         txDica.setText("Você errou o nome desse planeta.Tente mais uma vez com a ajuda de uma dica.");
-                        if(imgHawking.getOpacity() == 0){
+                        if(imgHawking.getOpacity() == 0.0){
                             loadTip();
                         }
                     }else{
@@ -121,9 +120,6 @@ public class TelaAdvPlanController implements Initializable {
                 this.novoJogo.getJogador().setTotal();
                 /*System.out.println("O pontos do jogador são: " + this.novoJogo.getJogador().getPontosAdvPla());
                 System.out.println("TODOS OS PONTOS COMPUTADOS, FINALIZADO!");*/
-            }
-            if(c == 8){
-                btVerif.setText("FINALIZAR");
             }
         });
         btDica.setOnMouseClicked(event -> {
@@ -148,51 +144,33 @@ public class TelaAdvPlanController implements Initializable {
     private void loadTipPla(int pla){
         switch (pla){
             case 9:
-                txDica.setText("Em função de sua proximidade do Sol, " +
-                        "este planeta apresenta temperaturas altíssimas. A temperatura média na " +
-                        "superfície é de 126°C, podendo chegar na máxima de 425°C.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 8:
-                txDica.setText("É o planeta mais próximo da Terra." +
-                                " A rotação dele ocorre de leste para oeste, " +
-                                "contrária a todos os planetas do Sistema Solar.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 7:
-                txDica.setText("O Planeta é composto por camadas que partem desde a " +
-                                "superfície terrestre até o núcleo, desse modo são denominadas " +
-                                "litosfera, crosta, manto, astenosfera, núcleo externo e núcleo interno.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 6:
-                txDica.setText("Possui duas pequenas luas de formato irregular: Fobos (medo) e Deimos (pânico). " +
-                                "Seus nomes derivam da mitologia grega e representam os filhos de Ares e Afrodite.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 5:
-                txDica.setText("Esse planeta foi observado a primeira vez por Galileu Galilei, em 1610, quando também foi possível a" +
-                                " identificação de quatro de seus 63 satélites, Io, Europa, Ganimedes e Calisto. A primeira " +
-                                "sonda a visita-lo foi a Pioneer 10 em 1973.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 4:
                 txDica.setStyle("-fx-font-size: 18");
-                txDica.setText("As observações realizadas indicam que os anéis do planeta são formados por" +
-                                " pedaços de cometas, asteroides e luas despedaçadas. Os anéis mais conhecidos são denominados " +
-                                "A, B e C, mas há sete no total, todos representam letras do alfabeto à medida em que foram descobertos.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 3:
-                txDica.setText("O planeta possui 27 luas conhecidas que são nomeadas com personagens das obras de William" +
-                                " Shakespeare ou Alexander Pope. As primeiras quatro luas, Titania, Oberon, Ariel e " +
-                                "Umbriel foram descobertas entre 1787-1851.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 2:
-                txDica.setText("A sua principal lua é Tritão. Desde que foi descoberto, a primeira volta ao Sol dele ocorreu em 2011. " +
-                                "O planeta é invisível a olho nu por causa de sua extrema distância da Terra. " +
-                                "O campo magnético é cerca de 27 vezes mais potente que o da Terra.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             case 1:
                 txDica.setStyle("-fx-font-size: 18");
-                txDica.setText("Durante 20 anos dos 248 de sua órbita ele fica mais próximo do sol do que " +
-                                "netuno devido ao fato de sua órbita ser elíptica. Outro fato interessante é " +
-                                "que a órbita de plutão passa pela de netuno em determinado período de seu trajeto, " +
-                                "quando ambos percorrem a mesma órbita em torno do sol.");
+                txDica.setText(TextosModel.getTexto2(pla));
                 break;
             default:
                 System.out.println("fim");
@@ -368,7 +346,9 @@ public class TelaAdvPlanController implements Initializable {
             fd.play();
         }else if(c == 8){
             txfPlanet.setVisible(false);
+            btVerif.setText("FINALIZAR");
         }
+
         c++;
     }
 

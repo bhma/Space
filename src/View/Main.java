@@ -30,7 +30,7 @@ public class Main extends Application {
                 player.seek(Duration.ZERO);
                 System.out.println("Loop");
             });
-            player.play();
+            //player.play();
         }
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
