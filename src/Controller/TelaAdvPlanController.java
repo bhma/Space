@@ -53,6 +53,9 @@ public class TelaAdvPlanController implements Initializable {
         iniciaJogo(TelaNomeController.getJogador());
         txfPlanet.setOnKeyPressed(event -> {
             if(event.getCode() == KeyCode.ENTER){
+                if(imgHawking.getOpacity() == 1){
+                    closeTip();
+                }
                 if(btVerif.getText().equals("INICIAR") == false){
                     if(c <= 8){
                         v = novoJogo.verificaPlaneta(num.get(c), txfPlanet.getText());
@@ -83,6 +86,9 @@ public class TelaAdvPlanController implements Initializable {
             }
         });
         btVerif.setOnMouseClicked(event -> {
+            if(imgHawking.getOpacity() == 1){
+                closeTip();
+            }
             if( c <= 8){
                 if(btVerif.getText().equals("INICIAR") == true){
                     btVerif.setText("PRÓXIMO");
@@ -148,7 +154,7 @@ public class TelaAdvPlanController implements Initializable {
                 break;
             case 8:
                 txDica.setText("É o planeta mais próximo da Terra." +
-                                "A rotação dele ocorre de leste para oeste, " +
+                                " A rotação dele ocorre de leste para oeste, " +
                                 "contrária a todos os planetas do Sistema Solar.");
                 break;
             case 7:
@@ -166,6 +172,7 @@ public class TelaAdvPlanController implements Initializable {
                                 "sonda a visita-lo foi a Pioneer 10 em 1973.");
                 break;
             case 4:
+                txDica.setStyle("-fx-font-size: 18");
                 txDica.setText("As observações realizadas indicam que os anéis do planeta são formados por" +
                                 " pedaços de cometas, asteroides e luas despedaçadas. Os anéis mais conhecidos são denominados " +
                                 "A, B e C, mas há sete no total, todos representam letras do alfabeto à medida em que foram descobertos.");
@@ -176,7 +183,7 @@ public class TelaAdvPlanController implements Initializable {
                                 "Umbriel foram descobertas entre 1787-1851.");
                 break;
             case 2:
-                txDica.setText("A sua principal lua, Tritão. Desde que foi descoberto, a primeira volta ao Sol dele ocorreu em 2011. " +
+                txDica.setText("A sua principal lua é Tritão. Desde que foi descoberto, a primeira volta ao Sol dele ocorreu em 2011. " +
                                 "O planeta é invisível a olho nu por causa de sua extrema distância da Terra. " +
                                 "O campo magnético é cerca de 27 vezes mais potente que o da Terra.");
                 break;
@@ -341,7 +348,8 @@ public class TelaAdvPlanController implements Initializable {
         novoJogo = new JogoAdvPlanController(jog);
         txfPlanet.setVisible(false);
         txDica.setText("Olá, digite o nome do planeta que é mostrado na tela, " +
-                        "se não souber clique em Dica que eu te ajudo. Boa Sorte!");
+                        "se não souber clique em Dica que eu te ajudo, para as dicas sumirem" +
+                        " clique em mim. Boa Sorte!");
         num = new ArrayList();
         for(int i = 1; i <= 9; i++){
             num.add(i);
