@@ -43,6 +43,7 @@ public class TelaAdvPlanController implements Initializable {
     @FXML private Label lblPonto;
     @FXML private TextField txfPlanet;
     @FXML private Text txDica;
+    @FXML private Text txFina;
     @FXML private ImageView imgBalDica;
 
     private JogoAdvPlanController novoJogo;
@@ -116,6 +117,7 @@ public class TelaAdvPlanController implements Initializable {
                     }
                 }
             }else if(btVerif.getText().equals("FINALIZAR")){
+                txFina.setVisible(true);
                 this.novoJogo.getJogador().setPontosAdvPla(this.novoJogo.getPontos());
                 this.novoJogo.getJogador().setTotal();
             }
@@ -128,9 +130,6 @@ public class TelaAdvPlanController implements Initializable {
 
         });
         btVoltar.setOnMouseClicked(event -> {
-            if(novoJogo.getJogador().getPontosSistSol() > 0){
-                MainController.getListaJogador().add(novoJogo.getJogador());
-            }
             try {
                 Transition.abreTelaModoJogo(TelaAdvPlan.getAdvPlanStage());
             } catch (IOException e) {

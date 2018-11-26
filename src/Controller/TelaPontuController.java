@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.JogadorModel;
 import View.TelaPontu;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,6 +24,7 @@ public class TelaPontuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        startScore();
         btVoltar.setOnMouseClicked(event -> {
             try {
                 Transition.abreTelaOpcao(TelaPontu.getTelaPontuStage());
@@ -30,5 +32,26 @@ public class TelaPontuController implements Initializable {
                 e.printStackTrace();
             }
         });
+    }
+    private void startScore(){
+        JogadorModel j;
+        try{
+            j = MainController.getListaJogador().get(0);
+            nomeJog1.setText(j.getNome());
+            pontJog1.setText(Integer.toString(j.getTotal()));
+            j = MainController.getListaJogador().get(1);
+            nomeJog2.setText(j.getNome());
+            pontJog2.setText(Integer.toString(j.getTotal()));
+            j = MainController.getListaJogador().get(2);
+            nomeJog3.setText(j.getNome());
+            pontJog3.setText(Integer.toString(j.getTotal()));
+            j = MainController.getListaJogador().get(3);
+            nomeJog4.setText(j.getNome());
+            pontJog4.setText(Integer.toString(j.getTotal()));
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.err.println(e);
+            System.out.println("Acesso inválido no array!");
+        }
+
     }
 }

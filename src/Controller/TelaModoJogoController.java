@@ -1,6 +1,7 @@
 package Controller;
 
 import View.TelaModoJogo;
+import View.TelaNome;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,11 +15,11 @@ public class TelaModoJogoController implements Initializable {
     @FXML private Button btSistSolar;
     @FXML private Button btAdvPlaneta;
     @FXML private Button btConst;
-    @FXML private Button btCacPlaneta;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btVoltar.setOnMouseClicked(event -> {
+            MainController.getListaJogador().add(TelaNomeController.getJogador());
             try {
                 Transition.abreTelaPrincipal(TelaModoJogo.getTelaModoJogoStage());
             } catch (Exception e) {

@@ -20,42 +20,42 @@
             <Font name="DejaVu Sans Bold" size="60.0" />
          </font>
       </Text>
-      <Text fx:id="nomeJog1" fill="#0fd5f5" layoutX="423.0" layoutY="264.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Bruno" wrappingWidth="205.99607825279236">
+      <Text fx:id="nomeJog1" fill="#0fd5f5" layoutX="437.0" layoutY="264.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="205.99607825279236">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="nomeJog2" fill="#0fd5f5" layoutX="423.0" layoutY="325.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Pedro" wrappingWidth="205.99608600139618">
+      <Text fx:id="nomeJog2" fill="#0fd5f5" layoutX="437.0" layoutY="325.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="205.99608600139618">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="nomeJog3" fill="#0fd5f5" layoutX="423.0" layoutY="384.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Danilo" wrappingWidth="205.99608600139618">
+      <Text fx:id="nomeJog3" fill="#0fd5f5" layoutX="437.0" layoutY="384.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="205.99608600139618">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="nomeJog4" fill="#0fd5f5" layoutX="423.0" layoutY="440.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Teo" wrappingWidth="205.99608600139618">
+      <Text fx:id="nomeJog4" fill="#0fd5f5" layoutX="437.0" layoutY="440.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="205.99608600139618">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="pontJog1" fill="#0fd5f5" layoutX="732.0" layoutY="264.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+      <Text fx:id="pontJog1" fill="#0fd5f5" layoutX="746.0" layoutY="264.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="141.99607825279236">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="pontJog2" fill="#0fd5f5" layoutX="732.0" layoutY="325.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+      <Text fx:id="pontJog2" fill="#0fd5f5" layoutX="746.0" layoutY="325.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="141.99607825279236">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="pontJog3" fill="#0fd5f5" layoutX="732.0" layoutY="384.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+      <Text fx:id="pontJog3" fill="#0fd5f5" layoutX="746.0" layoutY="384.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="141.99607825279236">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="pontJog4" fill="#0fd5f5" layoutX="732.0" layoutY="440.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="100" wrappingWidth="141.99607825279236">
+      <Text fx:id="pontJog4" fill="#0fd5f5" layoutX="746.0" layoutY="440.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" wrappingWidth="141.99607825279236">
          <font>
             <Font name="DejaVu Sans Bold" size="30.0" />
          </font>

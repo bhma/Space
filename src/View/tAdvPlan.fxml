@@ -96,5 +96,10 @@
             <Image url="@../Images/correct.png" />
          </image>
       </ImageView>
+      <Text fx:id="txFina" fill="#0fd5f5" layoutX="496.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FINALIZADO!" visible="false">
+         <font>
+            <Font name="DejaVu Sans Bold" size="40.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

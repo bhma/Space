@@ -173,10 +173,6 @@ public class TelaSistSolarController implements Initializable {
             obNetu = orbitar("Netu");
         });
         btVoltar.setOnMouseClicked(event -> {
-            if(novoJogo.getJogador().getPontosSistSol() > 0){
-                MainController.getListaJogador().add(novoJogo.getJogador());
-            }
-            System.out.println(MainController.getListaJogador());
             try {
                 Transition.abreTelaModoJogo(TelaSistSolar.getTelaSistSolarStage());
             } catch (IOException e) {
