@@ -106,6 +106,9 @@ public class DaoController {
                     jogador = (JogadorModel) input.readObject();
                     MainController.getListaJogador().add(jogador);
                 }
+            } catch (EOFException eofEx){
+                System.err.println(eofEx);
+                System.out.println("Fim do arquivo na leitura!");
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {

@@ -48,7 +48,7 @@ public class TelaSistSolarController implements Initializable {
 
     private JogoSistSolarController novoJogo;
     private PathTransition obMerc, obVenus, obTerra, obMart, obJup, obSat, obUra, obNetu, recMerc;
-    private ParallelTransition dHawking, dNeil;// dBalao1, dBalao2;
+    private ParallelTransition dHawking, dNeil;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -173,15 +173,18 @@ public class TelaSistSolarController implements Initializable {
             obNetu = orbitar("Netu");
         });
         btVoltar.setOnMouseClicked(event -> {
+            if(novoJogo.getJogador().getPontosSistSol() > 0){
+                MainController.getListaJogador().add(novoJogo.getJogador());
+            }
+            System.out.println(MainController.getListaJogador());
             try {
                 Transition.abreTelaModoJogo(TelaSistSolar.getTelaSistSolarStage());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        final long tm = System.nanoTime();
         btSub.setOnMouseClicked(event -> {
-            if(this.novoJogo.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart, imgJup, imgSatur, imgUrano, imgNetu)){
+            if(this.novoJogo.verificaSubmit(imgMerc, imgVenus, imgTerra, imgMart, imgJup, imgSatur, imgUrano, imgNetu) == true){
                 limpaPont(false);
                 txtNomePlaneta.setText("Parabéns");
                 obMerc.play();
@@ -281,9 +284,7 @@ public class TelaSistSolarController implements Initializable {
             if(imgHawking.getOpacity() != 0.0){
                 dHawking = closeTip("hawking");
                 bl2.setVisible(false);
-                //dBalao2 = closeTip("ba2");
                 dHawking.play();
-//                dBalao2.play();
                 txHaw.setOpacity(0);
             }
         });
@@ -292,9 +293,7 @@ public class TelaSistSolarController implements Initializable {
                 System.out.println("estou clicando!");
                 dNeil = closeTip("neil");
                 bl1.setVisible(false);
-//                dBalao1 = closeTip("ba1");
                 dNeil.play();
-//                dBalao1.play();
                 txNeil.setOpacity(0);
             }
         });
@@ -606,27 +605,11 @@ public class TelaSistSolarController implements Initializable {
         dHawking = loadTip("hawking");
         bl1.setVisible(true);
         bl2.setVisible(true);
-// dBalao1 = loadTip("ba1");
-//        dBalao2 = loadTip("ba2");
         dNeil.play();
         dHawking.play();
-//        dBalao1.play();
-//        dBalao2.play();
         txHaw.setText("Olá, eu me chamo Stephen Hawking, para as dicas sumirem basta clicar em mim ou no Neil. Divirta-se!");
         txNeil.setText("Saudações! Pode me chamar de Neil, para conseguir dicas só precisa clicar em uma órbita. Bom jogo!");
         txHaw.setOpacity(1);
         txNeil.setOpacity(1);
     }
-
-    /*public ImageView trocaImg(String planet){
-        Image img;
-        ImageView bl = new ImageView();
-        switch (planet){
-            case "merc":
-                img = new Image(new File("Images/balao_dica_merc.png").toURI().toString());
-                bl.setImage(img);
-                break;
-        }
-        return bl;
-    }*/
 }

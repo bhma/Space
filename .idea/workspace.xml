@@ -2,25 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/JogoConsteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/TelaConstController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/TelaConste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/tConste.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Space/Controller/TelaModoJogoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Space/Controller/TelaModoJogoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Space/Controller/Transition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Space/Controller/Transition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Space/Images/cancel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Space/Images/icons8-ok-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jogadores.dat" beforeDir="false" afterPath="$PROJECT_DIR$/jogadores.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Space/Controller/TelaAdvPlanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Space/Controller/TelaAdvPlanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Space/View/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Space/View/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Space/View/tAdvPlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Space/View/tAdvPlan.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Space/View/tConste.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Space/View/tConste.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TelaAdvPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TelaAdvPlanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TelaModoJogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TelaModoJogoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Transition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/cancel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/icons8-ok-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TelaSistSolarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TelaSistSolarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/JogadorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/JogadorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/TextosModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextosModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/tAdvPlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/tAdvPlan.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sounds/StarWars8Bit.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/sounds/StarWars8Bit.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sounds/Starwars.mp3" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,32 +71,34 @@
     <session id="2126464554">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.21" value="2" />
-          <entry key="project.open.time.23" value="2" />
+          <entry key="project.open.time.23" value="3" />
           <entry key="project.open.time.24" value="3" />
           <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.26" value="3" />
           <entry key="project.open.time.27" value="2" />
+          <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.33" value="2" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
           <entry key="fxml" value="17" />
-          <entry key="java" value="102" />
+          <entry key="java" value="121" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
@@ -109,7 +106,7 @@
         <counts>
           <entry key="CSS" value="4" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="102" />
+          <entry key="JAVA" value="121" />
           <entry key="XML" value="17" />
         </counts>
       </usages-collector>
@@ -118,13 +115,13 @@
           <entry key="css" value="21" />
           <entry key="dummy" value="31" />
           <entry key="fxml" value="24" />
-          <entry key="java" value="15212" />
+          <entry key="java" value="15561" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="21" />
-          <entry key="JAVA" value="15212" />
+          <entry key="JAVA" value="15561" />
           <entry key="PLAIN_TEXT" value="31" />
           <entry key="XML" value="24" />
         </counts>
@@ -136,17 +133,24 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TelaConstController.java">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/TelaPontuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
+            <state relative-caret-position="462">
+              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6522#6523#0" expanded="true" />
-                <element signature="e#6592#6593#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -154,12 +158,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TelaAdvPlanController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
+            <state relative-caret-position="156">
+              <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
               <folding>
-                <element signature="e#12155#12156#0" expanded="true" />
-                <element signature="e#12227#12228#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/TelaSistSolarController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="175" column="59" selection-start-line="175" selection-start-column="15" selection-end-line="175" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/JogadorModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -181,6 +211,7 @@
       <find>eliMer</find>
       <find>/button_black_small</find>
       <find>/button_black</find>
+      <find>inicia</find>
     </findStrings>
     <replaceStrings>
       <replace>/style</replace>
@@ -212,25 +243,25 @@
         <option value="$PROJECT_DIR$/src/View/TelaOpcao.java" />
         <option value="$PROJECT_DIR$/src/View/tPontu.fxml" />
         <option value="$PROJECT_DIR$/src/View/TelaPontu.java" />
-        <option value="$PROJECT_DIR$/src/dao/DaoController.java" />
-        <option value="$PROJECT_DIR$/src/Controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/View/tOpcao.fxml" />
         <option value="$PROJECT_DIR$/src/Controller/TelaPontuController.java" />
-        <option value="$PROJECT_DIR$/src/Model/JogadorModel.java" />
         <option value="$PROJECT_DIR$/src/Controller/TelaOpcaoController.java" />
         <option value="$PROJECT_DIR$/src/Controller/JogoAdvPlanController.java" />
         <option value="$PROJECT_DIR$/src/Model/PlanetaModel.java" />
         <option value="$PROJECT_DIR$/src/Model/DicasModel.java" />
-        <option value="$PROJECT_DIR$/src/Controller/TelaSistSolarController.java" />
-        <option value="$PROJECT_DIR$/src/View/Main.java" />
         <option value="$PROJECT_DIR$/src/View/tConste.fxml" />
         <option value="$PROJECT_DIR$/src/View/TelaConste.java" />
         <option value="$PROJECT_DIR$/src/Controller/Transition.java" />
         <option value="$PROJECT_DIR$/src/Controller/TelaModoJogoController.java" />
         <option value="$PROJECT_DIR$/src/Controller/JogoConsteController.java" />
-        <option value="$PROJECT_DIR$/src/Controller/TelaAdvPlanController.java" />
-        <option value="$PROJECT_DIR$/src/Model/TextosModel.java" />
         <option value="$PROJECT_DIR$/src/Controller/TelaConstController.java" />
+        <option value="$PROJECT_DIR$/src/Model/TextosModel.java" />
+        <option value="$PROJECT_DIR$/src/dao/DaoController.java" />
+        <option value="$PROJECT_DIR$/src/Model/JogadorModel.java" />
+        <option value="$PROJECT_DIR$/src/Controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/TelaSistSolarController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/TelaAdvPlanController.java" />
+        <option value="$PROJECT_DIR$/src/View/Main.java" />
       </list>
     </option>
   </component>
@@ -272,6 +303,12 @@
               <item name="Space" type="b2602c69:ProjectViewProjectNode" />
               <item name="Space" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Space" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Space" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -300,9 +337,9 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543183137454" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543268909329" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../efeitoTexto" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -323,7 +360,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TelaConste">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -458,8 +495,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TelaConste" />
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.TelaConste" />
         <item itemvalue="Application.TelaSistSolar" />
         <item itemvalue="Application.TelaAdvPlan" />
       </list>
@@ -486,7 +523,7 @@
     <frame x="0" y="-10" width="1920" height="1090" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16328709" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1696905" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -495,7 +532,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3462749" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3462749" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39979014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -559,13 +596,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/JogoSistSolarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/button_black_small.css" />
     <entry file="file://$PROJECT_DIR$/src/View/tSistSolar.fxml">
       <provider selected="true" editor-type-id="text-editor">
@@ -615,13 +645,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/DaoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/tOpcao.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -630,34 +653,10 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TelaPontuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/JogadorModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -683,13 +682,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/PlanetaModel.java" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/TelaSistSolarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/TelaSistSolar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -712,23 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Transition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TelaModoJogoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -747,12 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding>
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,32 +746,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TelaConstController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1430">
+          <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/TextosModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="105" column="34" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="34" />
+        <state relative-caret-position="462">
+          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/JogoSistSolarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="192" column="19" selection-start-line="192" selection-start-column="19" selection-end-line="192" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/DaoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="110" column="62" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Transition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TelaPontuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TelaSistSolarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="175" column="59" selection-start-line="175" selection-start-column="15" selection-end-line="175" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/JogadorModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TelaAdvPlanController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
-          <folding>
-            <element signature="e#12155#12156#0" expanded="true" />
-            <element signature="e#12227#12228#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="156">
+          <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TelaConstController.java">
+    <entry file="file://$PROJECT_DIR$/src/View/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
+        <state relative-caret-position="486">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6522#6523#0" expanded="true" />
-            <element signature="e#6592#6593#0" expanded="true" />
           </folding>
         </state>
       </provider>

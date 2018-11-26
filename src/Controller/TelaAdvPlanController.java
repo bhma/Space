@@ -2,6 +2,7 @@ package Controller;
 
 import Model.JogadorModel;
 import Model.TextosModel;
+import View.Main;
 import View.TelaAdvPlan;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
@@ -115,11 +116,8 @@ public class TelaAdvPlanController implements Initializable {
                     }
                 }
             }else if(btVerif.getText().equals("FINALIZAR")){
-                //System.out.println("ESTAMOS FINALIZANDO");
                 this.novoJogo.getJogador().setPontosAdvPla(this.novoJogo.getPontos());
                 this.novoJogo.getJogador().setTotal();
-                /*System.out.println("O pontos do jogador são: " + this.novoJogo.getJogador().getPontosAdvPla());
-                System.out.println("TODOS OS PONTOS COMPUTADOS, FINALIZADO!");*/
             }
         });
         btDica.setOnMouseClicked(event -> {
@@ -130,6 +128,9 @@ public class TelaAdvPlanController implements Initializable {
 
         });
         btVoltar.setOnMouseClicked(event -> {
+            if(novoJogo.getJogador().getPontosSistSol() > 0){
+                MainController.getListaJogador().add(novoJogo.getJogador());
+            }
             try {
                 Transition.abreTelaModoJogo(TelaAdvPlan.getAdvPlanStage());
             } catch (IOException e) {
@@ -346,6 +347,7 @@ public class TelaAdvPlanController implements Initializable {
             fd.play();
         }else if(c == 8){
             txfPlanet.setVisible(false);
+            btDica.setVisible(false);
             btVerif.setText("FINALIZAR");
         }
 

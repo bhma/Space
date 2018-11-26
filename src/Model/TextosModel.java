@@ -94,7 +94,7 @@ public abstract class TextosModel {
             case 1:
                 texto = "Durante 20 anos dos 248 de sua órbita ele fica mais próximo do sol do que " +
                         "netuno devido ao fato de sua órbita ser elíptica. Outro fato interessante é " +
-                        "que a órbita de plutão passa pela de netuno em determinado período de seu trajeto, " +
+                        "que a órbita dele passa pela de netuno em determinado período de seu trajeto, " +
                         "quando ambos percorrem a mesma órbita em torno do sol.";
                 break;
             default:

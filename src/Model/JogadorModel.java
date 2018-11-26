@@ -76,9 +76,9 @@ public class JogadorModel implements Serializable, Comparable<JogadorModel>{
     @Override
     public int compareTo(JogadorModel o) {
         if(this.total < o.getTotal()){
-            return -1;
-        }else if(this.total > o.getTotal()){
             return 1;
+        }else if(this.total > o.getTotal()){
+            return -1;
         }
         return 0;
     }
