@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaConstController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
@@ -27,20 +26,20 @@
             <Font name="DejaVu Sans Bold" size="25.0" />
          </font>
       </Text>
-      <Button fx:id="btVerif" layoutX="583.0" layoutY="480.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="INICIAR" />
+      <Button fx:id="btVerif" layoutX="561.0" layoutY="478.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="159.0" styleClass="small-button" stylesheets="@../css/style.css" text="INICIAR" />
       <Button fx:id="btDica" layoutX="596.0" layoutY="550.0" mnemonicParsing="false" styleClass="small-button" stylesheets="@../css/style.css" text="DICA" />
-      <ImageView fx:id="imgNeil" fitHeight="187.0" fitWidth="115.0" layoutX="1121.0" layoutY="483.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgNeil" fitHeight="187.0" fitWidth="115.0" layoutX="1161.0" layoutY="487.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Neil2.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txfNomeConste" layoutX="554.0" layoutY="414.0" prefHeight="35.0" prefWidth="172.0" promptText="Nome da constelação" visible="false" />
-      <ImageView fx:id="imgDica" fitHeight="287.0" fitWidth="338.0" layoutX="821.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <TextField fx:id="txfNomeConste" layoutX="567.0" layoutY="415.0" prefHeight="35.0" prefWidth="172.0" promptText="Nome da constelação" visible="false" />
+      <ImageView fx:id="imgDica" fitHeight="287.0" fitWidth="338.0" layoutX="861.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Images/balaoAdvPla.png" />
          </image>
       </ImageView>
-      <Text fx:id="txDica" layoutX="848.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="283.19921875">
+      <Text fx:id="txDica" layoutX="888.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="283.19921875">
          <font>
             <Font name="DejaVu Sans" size="20.0" />
          </font>
@@ -55,10 +54,55 @@
             <Image url="@../Images/icons8-fechar-janela-30.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgSag" fitHeight="367.0" fitWidth="338.0" layoutX="471.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgSag" fitHeight="340.0" fitWidth="378.0" layoutX="452.0" layoutY="46.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/imgSag.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="imgCaoMenor" fitHeight="193.0" fitWidth="189.0" layoutX="550.0" layoutY="108.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/cao_menor.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgUrsaMenor" fitHeight="323.0" fitWidth="347.0" layoutX="467.0" layoutY="47.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ursa_menor.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgTou" fitHeight="246.0" fitWidth="490.0" layoutX="406.0" layoutY="81.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/img_Touro.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCancer" fitHeight="284.0" fitWidth="353.0" layoutX="464.0" layoutY="81.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/img_Cancer.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgEscorp" fitHeight="273.0" fitWidth="549.0" layoutX="481.0" layoutY="54.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/img_escorpiao.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgLibra" fitHeight="246.0" fitWidth="257.0" layoutX="522.0" layoutY="82.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/img_Libra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgGemeos" fitHeight="292.0" fitWidth="450.0" layoutX="438.0" layoutY="42.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/img_Gemeos.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgDraco" fitHeight="298.0" fitWidth="477.0" layoutX="401.0" layoutY="45.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/img_Draco.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txFinal" fill="#0fd5f5" layoutX="411.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seus pontos estão salvos!" visible="false">
+         <font>
+            <Font name="DejaVu Sans" size="35.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

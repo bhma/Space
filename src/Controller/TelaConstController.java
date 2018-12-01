@@ -33,7 +33,16 @@ public class TelaConstController implements Initializable {
     @FXML private TextField txfNomeConste;
     @FXML private Text txPont;
     @FXML private Text txDica;
+    @FXML private Text txFinal;
     @FXML private ImageView imgSag;
+    @FXML private ImageView imgCaoMenor;
+    @FXML private ImageView imgUrsaMenor;
+    @FXML private ImageView imgTou;
+    @FXML private ImageView imgCancer;
+    @FXML private ImageView imgEscorp;
+    @FXML private ImageView imgLibra;
+    @FXML private ImageView imgGemeos;
+    @FXML private ImageView imgDraco;
 
     private JogoConsteController novoJogo;
     private FadeTransition fd;
@@ -49,11 +58,15 @@ public class TelaConstController implements Initializable {
                 closeTip();
             }
             if(event.getCode() == KeyCode.ENTER){
-                if(c <= 10){
-                    v = novoJogo.verifConste();
+                if(c <= 8){
+                    v = novoJogo.verifConste(num.get(c), txfNomeConste.getText());
                     if(v == true){
                         mudaConste();
                         icons(1);
+                        if(imgNeil.getOpacity() == 0.0){
+                            loadTip();
+                        }
+                        txDica.setText("Parabéns, você acertou!");
                     }else if (e == false){
                         e = true;
                         icons(2);
@@ -70,6 +83,11 @@ public class TelaConstController implements Initializable {
                     }
                     if(c == 9){
                         btVerif.setText("FINALIZAR");
+                        if(imgNeil.getOpacity() == 0.0){
+                            loadTip();
+                        }
+                        txDica.setStyle("-fx-font-size: 20");
+                        txDica.setText("Lembre-se de clicar em FINALIZAR para salvar seus pontos!");
                     }
                 }
             }
@@ -78,18 +96,21 @@ public class TelaConstController implements Initializable {
             if(imgNeil.getOpacity() == 1.0){
                 closeTip();
             }
-            if(c <= 9){
+            if(c <= 8){
                 if(btVerif.getText().equals("INICIAR") == true){
                     btVerif.setText("PRÓXIMO");
                     txfNomeConste.setVisible(true);
                     fd = loadConte(num.get(c));
                     fd.play();
-                    imgSag.setVisible(true);
                 }else{
-                    v = novoJogo.verifConste();
+                    v = novoJogo.verifConste(num.get(c), txfNomeConste.getText());
                     if(v == true){
                         icons(1);
                         mudaConste();
+                        if(imgNeil.getOpacity() == 0.0){
+                            loadTip();
+                        }
+                        txDica.setText("Parabéns, você acertou!");
                     }else if(e == false){
                         e = true;
                         icons(2);
@@ -105,9 +126,18 @@ public class TelaConstController implements Initializable {
                         mudaConste();
                     }
                 }
+                if(c == 9){
+                    btVerif.setText("FINALIZAR");
+                    if(imgNeil.getOpacity() == 0.0){
+                        loadTip();
+                    }
+                    txDica.setStyle("-fx-font-size: 20");
+                    txDica.setText("Lembre-se de clicar em FINALIZAR para salvar seus pontos!");
+                }
             }else if(btVerif.getText().equals("FINALIZAR")){
                 this.novoJogo.getJogador().setPontosConste(this.novoJogo.getPontos());
                 this.novoJogo.getJogador().setTotal();
+                txFinal.setVisible(true);
             }
         });
 
@@ -180,34 +210,31 @@ public class TelaConstController implements Initializable {
         fd.setToValue(1.0);
         switch (pla){
             case 9:
-//                fd.setNode(imgMerc);
+                fd.setNode(imgSag);
                 break;
             case 8:
-//                fd.setNode(imgVenus);
+                fd.setNode(imgCancer);
                 break;
             case 7:
-//                fd.setNode(imgTerra);
+                fd.setNode(imgCaoMenor);
                 break;
             case 6:
-//                fd.setNode(imgmart);
+                fd.setNode(imgEscorp);
                 break;
             case 5:
-//                fd.setNode(imgJup);
+                fd.setNode(imgTou);
                 break;
             case 4:
-//                fd.setNode(imgSat);
+                fd.setNode(imgUrsaMenor);
                 break;
             case 3:
-//                fd.setNode(imgUra);
+                fd.setNode(imgLibra);
                 break;
             case 2:
-//                fd.setNode(imgNetu);
+                fd.setNode(imgGemeos);
                 break;
             case 1:
-//                fd.setNode(imgPlut);
-                break;
-            case 0:
-
+                fd.setNode(imgDraco);
                 break;
         }
         return fd;
@@ -219,34 +246,31 @@ public class TelaConstController implements Initializable {
         fd.setToValue(0.0);
         switch (pla){
             case 9:
-//                fd.setNode(imgMerc);
+                fd.setNode(imgSag);
                 break;
             case 8:
-//                fd.setNode(imgVenus);
+                fd.setNode(imgCancer);
                 break;
             case 7:
-//                fd.setNode(imgTerra);
+                fd.setNode(imgCaoMenor);
                 break;
             case 6:
-//                fd.setNode(imgmart);
+                fd.setNode(imgEscorp);
                 break;
             case 5:
-//                fd.setNode(imgJup);
+                fd.setNode(imgTou);
                 break;
             case 4:
-//                fd.setNode(imgSat);
+                fd.setNode(imgUrsaMenor);
                 break;
             case 3:
-//                fd.setNode(imgUra);
+                fd.setNode(imgLibra);
                 break;
             case 2:
-//                fd.setNode(imgNetu);
+                fd.setNode(imgGemeos);
                 break;
             case 1:
-//                fd.setNode(imgPlut);
-                break;
-            case 0:
-
+                fd.setNode(imgDraco);
                 break;
         }
         return fd;
@@ -255,32 +279,39 @@ public class TelaConstController implements Initializable {
     private void loadTipConste(int pla){
         switch (pla){
             case 9:
+                txDica.setStyle("-fx-font-size: 20");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 8:
+                txDica.setStyle("-fx-font-size: 17");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 7:
+                txDica.setStyle("-fx-font-size: 20");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 6:
+                txDica.setStyle("-fx-font-size: 18");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 5:
+                txDica.setStyle("-fx-font-size: 20");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 4:
-                txDica.setStyle("-fx-font-size: 18");
+                txDica.setStyle("-fx-font-size: 15");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 3:
+                txDica.setStyle("-fx-font-size: 20");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 2:
+                txDica.setStyle("-fx-font-size: 19");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             case 1:
-                txDica.setStyle("-fx-font-size: 18");
+                txDica.setStyle("-fx-font-size: 15");
                 txDica.setText(TextosModel.getTexto3(pla));
                 break;
             default:
@@ -297,10 +328,10 @@ public class TelaConstController implements Initializable {
         txfNomeConste.clear();
         fd = closeConste(num.get(c));
         fd.play();
-        if(c < 9){
+        if(c < 8){
             fd = loadConte(num.get(c + 1));
             fd.play();
-        }else if(c == 9){
+        }else if(c == 8){
             txfNomeConste.setVisible(false);
             btVerif.setText("FINALIZAR");
         }
